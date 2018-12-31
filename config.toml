@@ -1,5 +1,5 @@
 languageCode = "en-us"
 title = "Leto's Lab"
-baseurl = "http://lab.samy.space/"
+baseurl = "http://prince-leto.github.io/Letos-Lab/"
 theme = "lab"
 publishDir = "docs"
