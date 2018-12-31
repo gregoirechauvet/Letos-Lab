@@ -1,0 +1,64 @@
+body {
+	margin: 0;
+}
+
+/* CARDS */
+.lab-card__primary {
+	padding: 1rem;
+}
+
+.lab-card__secondary {
+	padding: 0 1rem 8px;
+}
+
+.lab-card__title {
+	margin: 0;
+}
+
+.lab-card__secondary,
+.lab-card__subtitle {
+	color: var(--mdc-theme-text-secondary-on-background, rgba(0, 0, 0, .54));
+}
+
+.lab-card__subtitle {
+	margin: 0;
+}
+
+/* CANVAS */
+#draw {
+  display: block;
+}
+
+
+/* DRAWER */
+body {
+  display: flex;
+  height: 100vh;
+}
+
+.mdc-drawer-app-content {
+  flex: auto;
+  overflow: auto;
+  position: relative;
+}
+
+.main-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+  height: 100%;
+}
+
+.app-bar {
+  position: absolute;
+}
+
+.mdc-top-app-bar {
+  z-index: 7;
+}
+
+/* CUSTOM */
+.lab-button--fullwidth {
+  width: 100%;
+}

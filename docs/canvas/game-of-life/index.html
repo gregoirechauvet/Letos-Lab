@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Game of life</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+	
+	<link rel="stylesheet" type="text/css" href="https://unpkg.com/material-components-web@0.42.1/dist/material-components-web.min.css"/>
+	<script type="text/javascript" src="https://unpkg.com/material-components-web@0.42.1/dist/material-components-web.min.js"></script>
+
+	
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+
+	
+	<link rel="stylesheet" type="text/css" href="/styles.css"/>
+	<script type="text/javascript" src="/initiate.js"></script>
+
+	
+	<script type="text/javascript" src="/scripts/game-of-life.js"></script>
+
+</head>
+
+<header class="mdc-top-app-bar">
+	<div class="mdc-top-app-bar__row">
+		<section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+			<a href="#" class="demo-menu material-icons mdc-top-app-bar__navigation-icon">menu</a>
+			<a class="mdc-top-app-bar__title" href="http://lab.samy.space/" style="color: inherit;">Leto&#39;s Lab</a>
+		</section>
+	</div>
+</header>
+
+
+
+	<aside class="mdc-drawer mdc-drawer--dismissible mdc-top-app-bar--fixed-adjust">
+		<div class="mdc-drawer__content">
+			<div class="mdc-layout-grid">
+				<div class="mdc-layout-grid__inner" style="grid-template-columns: repeat(2, minmax(0, 1fr))">
+					<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-1">
+	<button id="play-button" class="mdc-button mdc-button--raised lab-button--fullwidth" disabled>
+		<i class="material-icons">play_arrow</i>
+	</button>
+</div>
+
+<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-1">
+	<button id="pause-button" class="mdc-button mdc-button--raised lab-button--fullwidth">
+		<i class="material-icons">pause</i>
+	</button>
+</div>
+
+<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
+	<button id="init-button" class="mdc-button mdc-button--raised lab-button--fullwidth" disabled>Initialize</button>
+</div>
+
+<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
+	<div class="mdc-text-field mdc-text-field--outlined">
+		<input type="text" id="threshold-input" class="mdc-text-field__input" value="30">
+		<div class="mdc-notched-outline">
+			<div class="mdc-notched-outline__leading"></div>
+			<div class="mdc-notched-outline__notch">
+				<label for="threshold-input" class="mdc-floating-label">Fill percentage</label>
+			</div>
+			<div class="mdc-notched-outline__trailing"></div>
+		</div>
+	</div>
+</div>
+
+<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
+	<div class="mdc-text-field mdc-text-field--outlined">
+		<input type="text" id="size-input" class="mdc-text-field__input" value="20">
+		<div class="mdc-notched-outline">
+			<div class="mdc-notched-outline__leading"></div>
+			<div class="mdc-notched-outline__notch">
+				<label for="size-input" class="mdc-floating-label">Cell size (px)</label>
+			</div>
+			<div class="mdc-notched-outline__trailing"></div>
+		</div>
+	</div>
+</div>
+
+<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-1">
+	<div class="mdc-text-field mdc-text-field--outlined">
+		<input type="text" id="height-input" class="mdc-text-field__input" value="20">
+		<div class="mdc-notched-outline">
+			<div class="mdc-notched-outline__leading"></div>
+			<div class="mdc-notched-outline__notch">
+				<label for="height-input" class="mdc-floating-label">Height</label>
+			</div>
+			<div class="mdc-notched-outline__trailing"></div>
+		</div>
+	</div>
+</div>
+
+<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-1">
+	<div class="mdc-text-field mdc-text-field--outlined">
+		<input type="text" id="width-input" class="mdc-text-field__input" value="30">
+		<div class="mdc-notched-outline">
+			<div class="mdc-notched-outline__leading"></div>
+			<div class="mdc-notched-outline__notch">
+				<label for="width-input" class="mdc-floating-label">Width</label>
+			</div>
+			<div class="mdc-notched-outline__trailing"></div>
+		</div>
+	</div>
+</div>
+
+<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
+	<div class="mdc-form-field">
+		<div class="mdc-checkbox">
+			<input type="checkbox" class="mdc-checkbox__native-control" id="grid-input" checked/>
+			<div class="mdc-checkbox__background">
+				<svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+					<path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+				</svg>
+				<div class="mdc-checkbox__mixedmark"></div>
+			</div>
+		</div>
+		<label for="grid-input">Draw grid</label>
+	</div>
+</div>
+
+				</div>
+			</div>
+		</div>
+	</aside>
+
+	<div class="mdc-drawer-app-content mdc-top-app-bar--fixed-adjust">
+		<main class="main-content" id="main-content">
+			<canvas id="draw"></canvas>
+		</main>
+	</div>
+
