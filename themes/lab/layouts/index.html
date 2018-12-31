@@ -1,0 +1,26 @@
+{{ define "main" }}
+
+	<div class="mdc-top-app-bar--fixed-adjust">
+		<div class="mdc-layout-grid">
+			<div class="mdc-layout-grid__inner">
+				{{ range .Pages }}
+					<div class="mdc-layout-grid__cell">
+						<div class="mdc-card">
+							<a class="mdc-card__primary-action mdc-ripple-upgraded" href="{{ .URL }}">
+								<div class="mdc-card__media mdc-card__media--square" style="background-image: url('thumbnails/{{ .Params.thumbnail }}')"></div>
+								<div class="lab-card__primary">
+									<h2 class="lab-card__title mdc-typography--headline6">{{ .Title }}</h2>
+									<h3 class="lab-card__subtitle mdc-typography--subtitle2">{{ .Date.Format "January 2, 2006" }}</h3>
+								</div>
+								<div class="lab-card__secondary mdc-typography--body2">
+									{{ .Params.description }}
+								</div>
+							</a>
+						</div>
+					</div>
+				{{ end }}
+			</div>
+		</div>
+	</div>
+
+{{ end }}

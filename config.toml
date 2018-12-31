@@ -1,0 +1,4 @@
+languageCode = "en-us"
+title = "Leto's Lab"
+baseurl = "http://lab.samy.space/"
+theme = "lab"
