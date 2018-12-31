@@ -1,5 +1,5 @@
 {{ define "scripts" }}
-	<script type="text/javascript" src="/scripts/{{ .Params.canvasscript }}"></script>
+	<script type="text/javascript" src="{{ .Site.BaseURL }}{{ .Params.canvasscript }}"></script>
 {{ end }}
 
 {{ define "main" }}
