@@ -13,8 +13,8 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
 
 	<!-- Personnal content -->
-	<link rel="stylesheet" type="text/css" href="/styles.css"/>
-	<script type="text/javascript" src="/initiate.js"></script>
+	<link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}styles.css"/>
+	<script type="text/javascript" src="{{ .Site.BaseURL }}initiate.js"></script>
 
 	{{ block "scripts" . }}
 	{{ end }}
