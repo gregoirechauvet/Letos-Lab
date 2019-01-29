@@ -90,7 +90,7 @@ function readValues() {
 
 window.addEventListener('load', () => {
 	const canvas = document.querySelector('#draw');
-	const context = canvas.getContext("2d");
+	const context = canvas.getContext('2d');
 
 	let { threshold, cellSize, width, height, grid } = readValues();
 	initCanvas(canvas, cellSize, width, height);
@@ -102,7 +102,6 @@ window.addEventListener('load', () => {
 		play = true;
 		document.querySelector("#play-button").disabled = true;
 		document.querySelector("#pause-button").disabled = false;
-		document.querySelector("#init-button").disabled = true;
 		requestAnimationFrame(loop);
 	});
 
@@ -110,10 +109,13 @@ window.addEventListener('load', () => {
 		play = false;
 		document.querySelector("#play-button").disabled = false;
 		document.querySelector("#pause-button").disabled = true;
-		document.querySelector("#init-button").disabled = false;
 	});
 
 	document.querySelector('#init-button').addEventListener('click', () => {
+		play = false;
+		document.querySelector("#play-button").disabled = false;
+		document.querySelector("#pause-button").disabled = true;
+
 		const options = readValues();
 		threshold = options.threshold;
 		cellSize = options.cellSize;
