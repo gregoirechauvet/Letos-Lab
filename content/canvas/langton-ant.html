@@ -1,0 +1,73 @@
++++
+date = "2012-06-06T00:00:00+01:00"
+title = "Langton ant"
+thumbnail = "langton-ant.png"
+canvasscript = "langton-ant.js"
+description = """
+The story of a really nice ant
+"""
++++
+
+<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
+	<button id="init-button" class="mdc-button mdc-button--raised lab-button--fullwidth">
+		<span class="mdc-button__label">Initialize</span>
+	</button>
+</div>
+
+<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
+	<div class="mdc-text-field mdc-text-field--outlined">
+		<input type="text" id="size-input" class="mdc-text-field__input" value="3">
+		<div class="mdc-notched-outline">
+			<div class="mdc-notched-outline__leading"></div>
+			<div class="mdc-notched-outline__notch">
+				<label for="size-input" class="mdc-floating-label">Cell size (px)</label>
+			</div>
+			<div class="mdc-notched-outline__trailing"></div>
+		</div>
+	</div>
+</div>
+
+<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-1">
+	<div class="mdc-text-field mdc-text-field--outlined">
+		<input type="text" id="height-input" class="mdc-text-field__input" value="200">
+		<div class="mdc-notched-outline">
+			<div class="mdc-notched-outline__leading"></div>
+			<div class="mdc-notched-outline__notch">
+				<label for="height-input" class="mdc-floating-label">Height</label>
+			</div>
+			<div class="mdc-notched-outline__trailing"></div>
+		</div>
+	</div>
+</div>
+
+<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-1">
+	<div class="mdc-text-field mdc-text-field--outlined">
+		<input type="text" id="width-input" class="mdc-text-field__input" value="300">
+		<div class="mdc-notched-outline">
+			<div class="mdc-notched-outline__leading"></div>
+			<div class="mdc-notched-outline__notch">
+				<label for="width-input" class="mdc-floating-label">Width</label>
+			</div>
+			<div class="mdc-notched-outline__trailing"></div>
+		</div>
+	</div>
+</div>
+
+<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
+	<div class="mdc-text-field mdc-text-field--outlined">
+		<input type="text" id="iterations-input" class="mdc-text-field__input" value="100">
+		<div class="mdc-notched-outline">
+			<div class="mdc-notched-outline__leading"></div>
+			<div class="mdc-notched-outline__notch">
+				<label for="iterations-input" class="mdc-floating-label">Iterations per frame</label>
+			</div>
+			<div class="mdc-notched-outline__trailing"></div>
+		</div>
+	</div>
+</div>
+
+<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
+	<button id="download-button" class="mdc-button mdc-button--raised lab-button--fullwidth">
+		<span class="mdc-button__label">Download image</span>
+	</button>
+</div>
