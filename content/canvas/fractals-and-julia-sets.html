@@ -1,0 +1,99 @@
++++
+title = "Fractals and julia sets"
+date = "2012-02-05T00:00:00+01:00"
+thumbnail = "mandelbrot.png"
+canvasscript = "fractals-and-julia-sets.js"
+description = """
+Fractals and Julia sets
+"""
++++
+
+<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
+	<button id="draw-button" class="mdc-button mdc-button--raised lab-button--fullwidth">
+		<span class="mdc-button__label">Draw</span>
+	</button>
+</div>
+
+<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
+	<div class="mdc-text-field mdc-text-field--outlined">
+		<input type="text" id="width-input" class="mdc-text-field__input" value="10" pattern="[0-9]+">
+		<div class="mdc-notched-outline">
+			<div class="mdc-notched-outline__leading"></div>
+			<div class="mdc-notched-outline__notch">
+				<label for="width-input" class="mdc-floating-label">Width (px)</label>
+			</div>
+			<div class="mdc-notched-outline__trailing"></div>
+		</div>
+	</div>
+</div>
+
+<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
+	<div class="mdc-text-field mdc-text-field--outlined">
+		<input type="text" id="threshold-input" class="mdc-text-field__input" value="100" pattern="[0-9]+">
+		<div class="mdc-notched-outline">
+			<div class="mdc-notched-outline__leading"></div>
+			<div class="mdc-notched-outline__notch">
+				<label for="threshold-input" class="mdc-floating-label">Threshold</label>
+			</div>
+			<div class="mdc-notched-outline__trailing"></div>
+		</div>
+	</div>
+</div>
+
+<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-1">
+	<div class="mdc-text-field mdc-text-field--outlined">
+		<input type="text" id="lower-abscissa-input" class="mdc-text-field__input" value="-2">
+		<div class="mdc-notched-outline">
+			<div class="mdc-notched-outline__leading"></div>
+			<div class="mdc-notched-outline__notch">
+				<label for="lower-abscissa-input" class="mdc-floating-label">Lower abscissa</label>
+			</div>
+			<div class="mdc-notched-outline__trailing"></div>
+		</div>
+	</div>
+</div>
+
+<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-1">
+	<div class="mdc-text-field mdc-text-field--outlined">
+		<input type="text" id="upper-abscissa-input" class="mdc-text-field__input" value="2">
+		<div class="mdc-notched-outline">
+			<div class="mdc-notched-outline__leading"></div>
+			<div class="mdc-notched-outline__notch">
+				<label for="upper-abscissa-input" class="mdc-floating-label">Upper abscissa</label>
+			</div>
+			<div class="mdc-notched-outline__trailing"></div>
+		</div>
+	</div>
+</div>
+
+<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-1">
+	<div class="mdc-text-field mdc-text-field--outlined">
+		<input type="text" id="lower-ordinate-input" class="mdc-text-field__input" value="-2">
+		<div class="mdc-notched-outline">
+			<div class="mdc-notched-outline__leading"></div>
+			<div class="mdc-notched-outline__notch">
+				<label for="lower-ordinate-input" class="mdc-floating-label">Lower ordinate</label>
+			</div>
+			<div class="mdc-notched-outline__trailing"></div>
+		</div>
+	</div>
+</div>
+
+<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-1">
+	<div class="mdc-text-field mdc-text-field--outlined">
+		<input type="text" id="upper-ordinate-input" class="mdc-text-field__input" value="2">
+		<div class="mdc-notched-outline">
+			<div class="mdc-notched-outline__leading"></div>
+			<div class="mdc-notched-outline__notch">
+				<label for="upper-ordinate-input" class="mdc-floating-label">Upper ordinate</label>
+			</div>
+			<div class="mdc-notched-outline__trailing"></div>
+		</div>
+	</div>
+</div>
+
+<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
+	<button id="download-button" class="mdc-button mdc-button--raised lab-button--fullwidth">
+		<span class="mdc-button__label">Download image</span>
+	</button>
+</div>
