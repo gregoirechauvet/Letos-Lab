@@ -6,8 +6,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 	
-	<link rel="stylesheet" type="text/css" href="https://unpkg.com/material-components-web@0.42.1/dist/material-components-web.min.css"/>
-	<script type="text/javascript" src="https://unpkg.com/material-components-web@0.42.1/dist/material-components-web.min.js"></script>
+	
+	<script src="//cdnjs.cloudflare.com/ajax/libs/seedrandom/2.4.4/seedrandom.min.js">
+	</script>
+
+	
+	<link rel="stylesheet" type="text/css" href="https://unpkg.com/material-components-web@0.43.1/dist/material-components-web.min.css"/>
+	<script type="text/javascript" src="https://unpkg.com/material-components-web@0.43.1/dist/material-components-web.min.js"></script>
 
 	
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
@@ -38,23 +43,26 @@
 				<div class="mdc-layout-grid__inner" style="grid-template-columns: repeat(2, minmax(0, 1fr))">
 					<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-1">
 	<button id="play-button" class="mdc-button mdc-button--raised lab-button--fullwidth" disabled>
-		<i class="material-icons">play_arrow</i>
+		<span class="mdc-button__label"><i class="material-icons">play_arrow</i></span>
 	</button>
 </div>
 
 <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-1">
 	<button id="pause-button" class="mdc-button mdc-button--raised lab-button--fullwidth">
-		<i class="material-icons">pause</i>
+		<span class="mdc-button__label"><i class="material-icons">pause</i></span>
 	</button>
 </div>
 
 <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
-	<button id="init-button" class="mdc-button mdc-button--raised lab-button--fullwidth" disabled>Initialize</button>
+	<button id="init-button" class="mdc-button mdc-button--raised lab-button--fullwidth">
+		<span class="mdc-button__label">Initialize</span>
+	</button>
 </div>
 
 <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
 	<div class="mdc-text-field mdc-text-field--outlined">
-		<input type="text" id="threshold-input" class="mdc-text-field__input" value="30">
+		<!-- Use pattern validation, because mdc does not support number fields -->
+		<input type="text" id="threshold-input" class="mdc-text-field__input" value="30" pattern="[0-9]{1,2}|100">
 		<div class="mdc-notched-outline">
 			<div class="mdc-notched-outline__leading"></div>
 			<div class="mdc-notched-outline__notch">
@@ -67,7 +75,7 @@
 
 <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
 	<div class="mdc-text-field mdc-text-field--outlined">
-		<input type="text" id="size-input" class="mdc-text-field__input" value="20">
+		<input type="text" id="size-input" class="mdc-text-field__input" value="20" pattern="[0-9]+">
 		<div class="mdc-notched-outline">
 			<div class="mdc-notched-outline__leading"></div>
 			<div class="mdc-notched-outline__notch">

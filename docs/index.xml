@@ -24,7 +24,106 @@
       <pubDate>Sat, 17 Nov 2012 00:00:00 +0100</pubDate>
       
       <guid>https://prince-leto.github.io/Letos-Lab/canvas/labyrinth-generator/</guid>
-      <description></description>
+      <description>&lt;div class=&#34;mdc-layout-grid__cell mdc-layout-grid__cell--span-2&#34;&gt;
+	&lt;div class=&#34;mdc-form-field&#34;&gt;
+		&lt;div class=&#34;mdc-checkbox&#34;&gt;
+			&lt;input type=&#34;checkbox&#34; class=&#34;mdc-checkbox__native-control&#34; id=&#34;animation-input&#34;/&gt;
+			&lt;div class=&#34;mdc-checkbox__background&#34;&gt;
+				&lt;svg class=&#34;mdc-checkbox__checkmark&#34; viewBox=&#34;0 0 24 24&#34;&gt;
+					&lt;path class=&#34;mdc-checkbox__checkmark-path&#34; fill=&#34;none&#34; d=&#34;M1.73,12.91 8.1,19.28 22.79,4.59&#34;/&gt;
+				&lt;/svg&gt;
+				&lt;div class=&#34;mdc-checkbox__mixedmark&#34;&gt;&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;label for=&#34;animation-input&#34;&gt;Animate?&lt;/label&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;mdc-layout-grid__cell mdc-layout-grid__cell--span-2&#34;&gt;
+	&lt;button id=&#34;generate-button&#34; class=&#34;mdc-button mdc-button--raised lab-button--fullwidth&#34;&gt;
+		&lt;span class=&#34;mdc-button__label&#34;&gt;Generate&lt;/span&gt;
+	&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;mdc-layout-grid__cell mdc-layout-grid__cell--span-2&#34;&gt;
+	&lt;button id=&#34;solve-button&#34; class=&#34;mdc-button mdc-button--raised lab-button--fullwidth&#34; disabled&gt;
+		&lt;span class=&#34;mdc-button__label&#34;&gt;Solve&lt;/span&gt;
+	&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;mdc-layout-grid__cell mdc-layout-grid__cell--span-2&#34;&gt;
+	&lt;div class=&#34;mdc-text-field mdc-text-field--outlined&#34;&gt;
+		&lt;input type=&#34;text&#34; id=&#34;size-input&#34; class=&#34;mdc-text-field__input&#34; value=&#34;10&#34; pattern=&#34;[0-9]+&#34;&gt;
+		&lt;div class=&#34;mdc-notched-outline&#34;&gt;
+			&lt;div class=&#34;mdc-notched-outline__leading&#34;&gt;&lt;/div&gt;
+			&lt;div class=&#34;mdc-notched-outline__notch&#34;&gt;
+				&lt;label for=&#34;size-input&#34; class=&#34;mdc-floating-label&#34;&gt;Cell size (px)&lt;/label&gt;
+			&lt;/div&gt;
+			&lt;div class=&#34;mdc-notched-outline__trailing&#34;&gt;&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;mdc-layout-grid__cell mdc-layout-grid__cell--span-1&#34;&gt;
+	&lt;div class=&#34;mdc-text-field mdc-text-field--outlined&#34;&gt;
+		&lt;input type=&#34;text&#34; id=&#34;width-input&#34; class=&#34;mdc-text-field__input&#34; value=&#34;50&#34; pattern=&#34;[0-9]+&#34;&gt;
+		&lt;div class=&#34;mdc-notched-outline&#34;&gt;
+			&lt;div class=&#34;mdc-notched-outline__leading&#34;&gt;&lt;/div&gt;
+			&lt;div class=&#34;mdc-notched-outline__notch&#34;&gt;
+				&lt;label for=&#34;width-input&#34; class=&#34;mdc-floating-label&#34;&gt;Width&lt;/label&gt;
+			&lt;/div&gt;
+			&lt;div class=&#34;mdc-notched-outline__trailing&#34;&gt;&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;mdc-layout-grid__cell mdc-layout-grid__cell--span-1&#34;&gt;
+	&lt;div class=&#34;mdc-text-field mdc-text-field--outlined&#34;&gt;
+		&lt;input type=&#34;text&#34; id=&#34;height-input&#34; class=&#34;mdc-text-field__input&#34; value=&#34;40&#34; pattern=&#34;[0-9]+&#34;&gt;
+		&lt;div class=&#34;mdc-notched-outline&#34;&gt;
+			&lt;div class=&#34;mdc-notched-outline__leading&#34;&gt;&lt;/div&gt;
+			&lt;div class=&#34;mdc-notched-outline__notch&#34;&gt;
+				&lt;label for=&#34;height-input&#34; class=&#34;mdc-floating-label&#34;&gt;Height&lt;/label&gt;
+			&lt;/div&gt;
+			&lt;div class=&#34;mdc-notched-outline__trailing&#34;&gt;&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;mdc-layout-grid__cell mdc-layout-grid__cell--span-2&#34;&gt;
+	&lt;div class=&#34;mdc-form-field&#34;&gt;
+		&lt;div class=&#34;mdc-checkbox&#34;&gt;
+			&lt;input type=&#34;checkbox&#34; class=&#34;mdc-checkbox__native-control&#34; id=&#34;auto-seed-input&#34; checked/&gt;
+			&lt;div class=&#34;mdc-checkbox__background&#34;&gt;
+				&lt;svg class=&#34;mdc-checkbox__checkmark&#34; viewBox=&#34;0 0 24 24&#34;&gt;
+					&lt;path class=&#34;mdc-checkbox__checkmark-path&#34; fill=&#34;none&#34; d=&#34;M1.73,12.91 8.1,19.28 22.79,4.59&#34;/&gt;
+				&lt;/svg&gt;
+				&lt;div class=&#34;mdc-checkbox__mixedmark&#34;&gt;&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;label for=&#34;auto-seed-input&#34;&gt;Auto seed?&lt;/label&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;mdc-layout-grid__cell mdc-layout-grid__cell--span-2&#34;&gt;
+	&lt;div class=&#34;mdc-text-field mdc-text-field--outlined mdc-text-field--disabled&#34;&gt;
+		&lt;input type=&#34;text&#34; id=&#34;seed-input&#34; class=&#34;mdc-text-field__input&#34; value=&#34;hello&#34; disabled&gt;
+		&lt;div class=&#34;mdc-notched-outline&#34;&gt;
+			&lt;div class=&#34;mdc-notched-outline__leading&#34;&gt;&lt;/div&gt;
+			&lt;div class=&#34;mdc-notched-outline__notch&#34;&gt;
+				&lt;label for=&#34;seed-input&#34; class=&#34;mdc-floating-label&#34;&gt;Seed&lt;/label&gt;
+			&lt;/div&gt;
+			&lt;div class=&#34;mdc-notched-outline__trailing&#34;&gt;&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;mdc-layout-grid__cell mdc-layout-grid__cell--span-2&#34;&gt;
+	&lt;button id=&#34;download-button&#34; class=&#34;mdc-button mdc-button--raised lab-button--fullwidth&#34;&gt;
+		&lt;span class=&#34;mdc-button__label&#34;&gt;Download image&lt;/span&gt;
+	&lt;/button&gt;
+&lt;/div&gt;
+</description>
     </item>
     
     <item>
@@ -42,7 +141,70 @@
       <pubDate>Wed, 06 Jun 2012 00:00:00 +0100</pubDate>
       
       <guid>https://prince-leto.github.io/Letos-Lab/canvas/langton-ant/</guid>
-      <description></description>
+      <description>&lt;div class=&#34;mdc-layout-grid__cell mdc-layout-grid__cell--span-2&#34;&gt;
+	&lt;button id=&#34;init-button&#34; class=&#34;mdc-button mdc-button--raised lab-button--fullwidth&#34;&gt;
+		&lt;span class=&#34;mdc-button__label&#34;&gt;Initialize&lt;/span&gt;
+	&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;mdc-layout-grid__cell mdc-layout-grid__cell--span-2&#34;&gt;
+	&lt;div class=&#34;mdc-text-field mdc-text-field--outlined&#34;&gt;
+		&lt;input type=&#34;text&#34; id=&#34;size-input&#34; class=&#34;mdc-text-field__input&#34; value=&#34;3&#34;&gt;
+		&lt;div class=&#34;mdc-notched-outline&#34;&gt;
+			&lt;div class=&#34;mdc-notched-outline__leading&#34;&gt;&lt;/div&gt;
+			&lt;div class=&#34;mdc-notched-outline__notch&#34;&gt;
+				&lt;label for=&#34;size-input&#34; class=&#34;mdc-floating-label&#34;&gt;Cell size (px)&lt;/label&gt;
+			&lt;/div&gt;
+			&lt;div class=&#34;mdc-notched-outline__trailing&#34;&gt;&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;mdc-layout-grid__cell mdc-layout-grid__cell--span-1&#34;&gt;
+	&lt;div class=&#34;mdc-text-field mdc-text-field--outlined&#34;&gt;
+		&lt;input type=&#34;text&#34; id=&#34;height-input&#34; class=&#34;mdc-text-field__input&#34; value=&#34;200&#34;&gt;
+		&lt;div class=&#34;mdc-notched-outline&#34;&gt;
+			&lt;div class=&#34;mdc-notched-outline__leading&#34;&gt;&lt;/div&gt;
+			&lt;div class=&#34;mdc-notched-outline__notch&#34;&gt;
+				&lt;label for=&#34;height-input&#34; class=&#34;mdc-floating-label&#34;&gt;Height&lt;/label&gt;
+			&lt;/div&gt;
+			&lt;div class=&#34;mdc-notched-outline__trailing&#34;&gt;&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;mdc-layout-grid__cell mdc-layout-grid__cell--span-1&#34;&gt;
+	&lt;div class=&#34;mdc-text-field mdc-text-field--outlined&#34;&gt;
+		&lt;input type=&#34;text&#34; id=&#34;width-input&#34; class=&#34;mdc-text-field__input&#34; value=&#34;300&#34;&gt;
+		&lt;div class=&#34;mdc-notched-outline&#34;&gt;
+			&lt;div class=&#34;mdc-notched-outline__leading&#34;&gt;&lt;/div&gt;
+			&lt;div class=&#34;mdc-notched-outline__notch&#34;&gt;
+				&lt;label for=&#34;width-input&#34; class=&#34;mdc-floating-label&#34;&gt;Width&lt;/label&gt;
+			&lt;/div&gt;
+			&lt;div class=&#34;mdc-notched-outline__trailing&#34;&gt;&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;mdc-layout-grid__cell mdc-layout-grid__cell--span-2&#34;&gt;
+	&lt;div class=&#34;mdc-text-field mdc-text-field--outlined&#34;&gt;
+		&lt;input type=&#34;text&#34; id=&#34;iterations-input&#34; class=&#34;mdc-text-field__input&#34; value=&#34;100&#34;&gt;
+		&lt;div class=&#34;mdc-notched-outline&#34;&gt;
+			&lt;div class=&#34;mdc-notched-outline__leading&#34;&gt;&lt;/div&gt;
+			&lt;div class=&#34;mdc-notched-outline__notch&#34;&gt;
+				&lt;label for=&#34;iterations-input&#34; class=&#34;mdc-floating-label&#34;&gt;Iterations per frame&lt;/label&gt;
+			&lt;/div&gt;
+			&lt;div class=&#34;mdc-notched-outline__trailing&#34;&gt;&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;mdc-layout-grid__cell mdc-layout-grid__cell--span-2&#34;&gt;
+	&lt;button id=&#34;download-button&#34; class=&#34;mdc-button mdc-button--raised lab-button--fullwidth&#34;&gt;
+		&lt;span class=&#34;mdc-button__label&#34;&gt;Download image&lt;/span&gt;
+	&lt;/button&gt;
+&lt;/div&gt;
+</description>
     </item>
     
     <item>
@@ -51,7 +213,96 @@
       <pubDate>Sun, 05 Feb 2012 00:00:00 +0100</pubDate>
       
       <guid>https://prince-leto.github.io/Letos-Lab/canvas/fractals-and-julia-sets/</guid>
-      <description></description>
+      <description>&lt;div class=&#34;mdc-layout-grid__cell mdc-layout-grid__cell--span-2&#34;&gt;
+	&lt;button id=&#34;draw-button&#34; class=&#34;mdc-button mdc-button--raised lab-button--fullwidth&#34;&gt;
+		&lt;span class=&#34;mdc-button__label&#34;&gt;Draw&lt;/span&gt;
+	&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;mdc-layout-grid__cell mdc-layout-grid__cell--span-2&#34;&gt;
+	&lt;div class=&#34;mdc-text-field mdc-text-field--outlined&#34;&gt;
+		&lt;input type=&#34;text&#34; id=&#34;width-input&#34; class=&#34;mdc-text-field__input&#34; value=&#34;10&#34; pattern=&#34;[0-9]+&#34;&gt;
+		&lt;div class=&#34;mdc-notched-outline&#34;&gt;
+			&lt;div class=&#34;mdc-notched-outline__leading&#34;&gt;&lt;/div&gt;
+			&lt;div class=&#34;mdc-notched-outline__notch&#34;&gt;
+				&lt;label for=&#34;width-input&#34; class=&#34;mdc-floating-label&#34;&gt;Width (px)&lt;/label&gt;
+			&lt;/div&gt;
+			&lt;div class=&#34;mdc-notched-outline__trailing&#34;&gt;&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;mdc-layout-grid__cell mdc-layout-grid__cell--span-2&#34;&gt;
+	&lt;div class=&#34;mdc-text-field mdc-text-field--outlined&#34;&gt;
+		&lt;input type=&#34;text&#34; id=&#34;threshold-input&#34; class=&#34;mdc-text-field__input&#34; value=&#34;100&#34; pattern=&#34;[0-9]+&#34;&gt;
+		&lt;div class=&#34;mdc-notched-outline&#34;&gt;
+			&lt;div class=&#34;mdc-notched-outline__leading&#34;&gt;&lt;/div&gt;
+			&lt;div class=&#34;mdc-notched-outline__notch&#34;&gt;
+				&lt;label for=&#34;threshold-input&#34; class=&#34;mdc-floating-label&#34;&gt;Threshold&lt;/label&gt;
+			&lt;/div&gt;
+			&lt;div class=&#34;mdc-notched-outline__trailing&#34;&gt;&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;mdc-layout-grid__cell mdc-layout-grid__cell--span-1&#34;&gt;
+	&lt;div class=&#34;mdc-text-field mdc-text-field--outlined&#34;&gt;
+		&lt;input type=&#34;text&#34; id=&#34;lower-abscissa-input&#34; class=&#34;mdc-text-field__input&#34; value=&#34;-2&#34;&gt;
+		&lt;div class=&#34;mdc-notched-outline&#34;&gt;
+			&lt;div class=&#34;mdc-notched-outline__leading&#34;&gt;&lt;/div&gt;
+			&lt;div class=&#34;mdc-notched-outline__notch&#34;&gt;
+				&lt;label for=&#34;lower-abscissa-input&#34; class=&#34;mdc-floating-label&#34;&gt;Lower abscissa&lt;/label&gt;
+			&lt;/div&gt;
+			&lt;div class=&#34;mdc-notched-outline__trailing&#34;&gt;&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;mdc-layout-grid__cell mdc-layout-grid__cell--span-1&#34;&gt;
+	&lt;div class=&#34;mdc-text-field mdc-text-field--outlined&#34;&gt;
+		&lt;input type=&#34;text&#34; id=&#34;upper-abscissa-input&#34; class=&#34;mdc-text-field__input&#34; value=&#34;2&#34;&gt;
+		&lt;div class=&#34;mdc-notched-outline&#34;&gt;
+			&lt;div class=&#34;mdc-notched-outline__leading&#34;&gt;&lt;/div&gt;
+			&lt;div class=&#34;mdc-notched-outline__notch&#34;&gt;
+				&lt;label for=&#34;upper-abscissa-input&#34; class=&#34;mdc-floating-label&#34;&gt;Upper abscissa&lt;/label&gt;
+			&lt;/div&gt;
+			&lt;div class=&#34;mdc-notched-outline__trailing&#34;&gt;&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;mdc-layout-grid__cell mdc-layout-grid__cell--span-1&#34;&gt;
+	&lt;div class=&#34;mdc-text-field mdc-text-field--outlined&#34;&gt;
+		&lt;input type=&#34;text&#34; id=&#34;lower-ordinate-input&#34; class=&#34;mdc-text-field__input&#34; value=&#34;-2&#34;&gt;
+		&lt;div class=&#34;mdc-notched-outline&#34;&gt;
+			&lt;div class=&#34;mdc-notched-outline__leading&#34;&gt;&lt;/div&gt;
+			&lt;div class=&#34;mdc-notched-outline__notch&#34;&gt;
+				&lt;label for=&#34;lower-ordinate-input&#34; class=&#34;mdc-floating-label&#34;&gt;Lower ordinate&lt;/label&gt;
+			&lt;/div&gt;
+			&lt;div class=&#34;mdc-notched-outline__trailing&#34;&gt;&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;mdc-layout-grid__cell mdc-layout-grid__cell--span-1&#34;&gt;
+	&lt;div class=&#34;mdc-text-field mdc-text-field--outlined&#34;&gt;
+		&lt;input type=&#34;text&#34; id=&#34;upper-ordinate-input&#34; class=&#34;mdc-text-field__input&#34; value=&#34;2&#34;&gt;
+		&lt;div class=&#34;mdc-notched-outline&#34;&gt;
+			&lt;div class=&#34;mdc-notched-outline__leading&#34;&gt;&lt;/div&gt;
+			&lt;div class=&#34;mdc-notched-outline__notch&#34;&gt;
+				&lt;label for=&#34;upper-ordinate-input&#34; class=&#34;mdc-floating-label&#34;&gt;Upper ordinate&lt;/label&gt;
+			&lt;/div&gt;
+			&lt;div class=&#34;mdc-notched-outline__trailing&#34;&gt;&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;mdc-layout-grid__cell mdc-layout-grid__cell--span-2&#34;&gt;
+	&lt;button id=&#34;download-button&#34; class=&#34;mdc-button mdc-button--raised lab-button--fullwidth&#34;&gt;
+		&lt;span class=&#34;mdc-button__label&#34;&gt;Download image&lt;/span&gt;
+	&lt;/button&gt;
+&lt;/div&gt;
+</description>
     </item>
     
     <item>
@@ -62,23 +313,26 @@
       <guid>https://prince-leto.github.io/Letos-Lab/canvas/game-of-life/</guid>
       <description>&lt;div class=&#34;mdc-layout-grid__cell mdc-layout-grid__cell--span-1&#34;&gt;
 	&lt;button id=&#34;play-button&#34; class=&#34;mdc-button mdc-button--raised lab-button--fullwidth&#34; disabled&gt;
-		&lt;i class=&#34;material-icons&#34;&gt;play_arrow&lt;/i&gt;
+		&lt;span class=&#34;mdc-button__label&#34;&gt;&lt;i class=&#34;material-icons&#34;&gt;play_arrow&lt;/i&gt;&lt;/span&gt;
 	&lt;/button&gt;
 &lt;/div&gt;
 
 &lt;div class=&#34;mdc-layout-grid__cell mdc-layout-grid__cell--span-1&#34;&gt;
 	&lt;button id=&#34;pause-button&#34; class=&#34;mdc-button mdc-button--raised lab-button--fullwidth&#34;&gt;
-		&lt;i class=&#34;material-icons&#34;&gt;pause&lt;/i&gt;
+		&lt;span class=&#34;mdc-button__label&#34;&gt;&lt;i class=&#34;material-icons&#34;&gt;pause&lt;/i&gt;&lt;/span&gt;
 	&lt;/button&gt;
 &lt;/div&gt;
 
 &lt;div class=&#34;mdc-layout-grid__cell mdc-layout-grid__cell--span-2&#34;&gt;
-	&lt;button id=&#34;init-button&#34; class=&#34;mdc-button mdc-button--raised lab-button--fullwidth&#34; disabled&gt;Initialize&lt;/button&gt;
+	&lt;button id=&#34;init-button&#34; class=&#34;mdc-button mdc-button--raised lab-button--fullwidth&#34;&gt;
+		&lt;span class=&#34;mdc-button__label&#34;&gt;Initialize&lt;/span&gt;
+	&lt;/button&gt;
 &lt;/div&gt;
 
 &lt;div class=&#34;mdc-layout-grid__cell mdc-layout-grid__cell--span-2&#34;&gt;
 	&lt;div class=&#34;mdc-text-field mdc-text-field--outlined&#34;&gt;
-		&lt;input type=&#34;text&#34; id=&#34;threshold-input&#34; class=&#34;mdc-text-field__input&#34; value=&#34;30&#34;&gt;
+		&lt;!-- Use pattern validation, because mdc does not support number fields --&gt;
+		&lt;input type=&#34;text&#34; id=&#34;threshold-input&#34; class=&#34;mdc-text-field__input&#34; value=&#34;30&#34; pattern=&#34;[0-9]{1,2}|100&#34;&gt;
 		&lt;div class=&#34;mdc-notched-outline&#34;&gt;
 			&lt;div class=&#34;mdc-notched-outline__leading&#34;&gt;&lt;/div&gt;
 			&lt;div class=&#34;mdc-notched-outline__notch&#34;&gt;
@@ -91,7 +345,7 @@
 
 &lt;div class=&#34;mdc-layout-grid__cell mdc-layout-grid__cell--span-2&#34;&gt;
 	&lt;div class=&#34;mdc-text-field mdc-text-field--outlined&#34;&gt;
-		&lt;input type=&#34;text&#34; id=&#34;size-input&#34; class=&#34;mdc-text-field__input&#34; value=&#34;20&#34;&gt;
+		&lt;input type=&#34;text&#34; id=&#34;size-input&#34; class=&#34;mdc-text-field__input&#34; value=&#34;20&#34; pattern=&#34;[0-9]+&#34;&gt;
 		&lt;div class=&#34;mdc-notched-outline&#34;&gt;
 			&lt;div class=&#34;mdc-notched-outline__leading&#34;&gt;&lt;/div&gt;
 			&lt;div class=&#34;mdc-notched-outline__notch&#34;&gt;
