@@ -92,27 +92,34 @@ window.addEventListener('load', () => {
 	const canvas = document.querySelector('#draw');
 	const context = canvas.getContext('2d');
 
+	let frameId = null;
+
+	const start = (loop) => {
+		frameId = requestAnimationFrame(loop);
+	}
+
+	const stop = () => {
+		cancelAnimationFrame(frameId);
+	}
+
 	let { threshold, cellSize, width, height, grid } = readValues();
 	initCanvas(canvas, cellSize, width, height);
 	let data = initRandom(width, height, threshold);
 
-	let play = true;
-
 	document.querySelector("#play-button").addEventListener('click', () => {
-		play = true;
 		document.querySelector("#play-button").disabled = true;
 		document.querySelector("#pause-button").disabled = false;
-		requestAnimationFrame(loop);
+		run(loop)
 	});
 
 	document.querySelector("#pause-button").addEventListener('click', () => {
-		play = false;
+		stop();
 		document.querySelector("#play-button").disabled = false;
 		document.querySelector("#pause-button").disabled = true;
 	});
 
 	document.querySelector('#init-button').addEventListener('click', () => {
-		play = false;
+		stop();
 		document.querySelector("#play-button").disabled = false;
 		document.querySelector("#pause-button").disabled = true;
 
@@ -130,10 +137,6 @@ window.addEventListener('load', () => {
 	});
 
 	canvas.addEventListener('click', event => {
-		if (play) {
-			return ;
-		}
-
 		const currentTargetRect = event.currentTarget.getBoundingClientRect();
 		const i = Math.floor((event.pageX - currentTargetRect.left) / cellSize);
 		const j = Math.floor((event.pageY - currentTargetRect.top) / cellSize);
@@ -146,10 +149,8 @@ window.addEventListener('load', () => {
 		data = step(width, height, data);
 		draw(context, cellSize, width, height, data, grid);
 
-		if (play) {
-			requestAnimationFrame(loop);
-		}
+		run(loop);
 	};
 
-	requestAnimationFrame(loop);
+	run(loop);
 });

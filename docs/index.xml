@@ -2,28 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Leto&#39;s Lab</title>
-    <link>https://prince-leto.github.io/Letos-Lab/index.xml</link>
+    <link>https://localhost/index.xml</link>
     <description>Recent content on Leto&#39;s Lab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 14 Dec 2012 00:00:00 +0100</lastBuildDate>
-    <atom:link href="https://prince-leto.github.io/Letos-Lab/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Circular labyrinth</title>
-      <link>https://prince-leto.github.io/Letos-Lab/canvas/circular-labyrinth/</link>
-      <pubDate>Fri, 14 Dec 2012 00:00:00 +0100</pubDate>
-      
-      <guid>https://prince-leto.github.io/Letos-Lab/canvas/circular-labyrinth/</guid>
-      <description></description>
-    </item>
+    <lastBuildDate>Sat, 17 Nov 2012 00:00:00 +0100</lastBuildDate>
+    <atom:link href="https://localhost/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Labyrinth generator</title>
-      <link>https://prince-leto.github.io/Letos-Lab/canvas/labyrinth-generator/</link>
+      <link>https://localhost/canvas/labyrinth-generator/</link>
       <pubDate>Sat, 17 Nov 2012 00:00:00 +0100</pubDate>
       
-      <guid>https://prince-leto.github.io/Letos-Lab/canvas/labyrinth-generator/</guid>
+      <guid>https://localhost/canvas/labyrinth-generator/</guid>
       <description>&lt;div class=&#34;mdc-layout-grid__cell mdc-layout-grid__cell--span-2&#34;&gt;
 	&lt;div class=&#34;mdc-form-field&#34;&gt;
 		&lt;div class=&#34;mdc-checkbox&#34;&gt;
@@ -127,190 +118,11 @@
     </item>
     
     <item>
-      <title>Newton fractal</title>
-      <link>https://prince-leto.github.io/Letos-Lab/canvas/newton-fractal/</link>
-      <pubDate>Sat, 09 Jun 2012 00:00:00 +0100</pubDate>
-      
-      <guid>https://prince-leto.github.io/Letos-Lab/canvas/newton-fractal/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Langton ant</title>
-      <link>https://prince-leto.github.io/Letos-Lab/canvas/langton-ant/</link>
-      <pubDate>Wed, 06 Jun 2012 00:00:00 +0100</pubDate>
-      
-      <guid>https://prince-leto.github.io/Letos-Lab/canvas/langton-ant/</guid>
-      <description>&lt;div class=&#34;mdc-layout-grid__cell mdc-layout-grid__cell--span-2&#34;&gt;
-	&lt;button id=&#34;init-button&#34; class=&#34;mdc-button mdc-button--raised lab-button--fullwidth&#34;&gt;
-		&lt;span class=&#34;mdc-button__label&#34;&gt;Initialize&lt;/span&gt;
-	&lt;/button&gt;
-&lt;/div&gt;
-
-&lt;div class=&#34;mdc-layout-grid__cell mdc-layout-grid__cell--span-2&#34;&gt;
-	&lt;div class=&#34;mdc-text-field mdc-text-field--outlined&#34;&gt;
-		&lt;input type=&#34;text&#34; id=&#34;size-input&#34; class=&#34;mdc-text-field__input&#34; value=&#34;3&#34;&gt;
-		&lt;div class=&#34;mdc-notched-outline&#34;&gt;
-			&lt;div class=&#34;mdc-notched-outline__leading&#34;&gt;&lt;/div&gt;
-			&lt;div class=&#34;mdc-notched-outline__notch&#34;&gt;
-				&lt;label for=&#34;size-input&#34; class=&#34;mdc-floating-label&#34;&gt;Cell size (px)&lt;/label&gt;
-			&lt;/div&gt;
-			&lt;div class=&#34;mdc-notched-outline__trailing&#34;&gt;&lt;/div&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&#34;mdc-layout-grid__cell mdc-layout-grid__cell--span-1&#34;&gt;
-	&lt;div class=&#34;mdc-text-field mdc-text-field--outlined&#34;&gt;
-		&lt;input type=&#34;text&#34; id=&#34;height-input&#34; class=&#34;mdc-text-field__input&#34; value=&#34;200&#34;&gt;
-		&lt;div class=&#34;mdc-notched-outline&#34;&gt;
-			&lt;div class=&#34;mdc-notched-outline__leading&#34;&gt;&lt;/div&gt;
-			&lt;div class=&#34;mdc-notched-outline__notch&#34;&gt;
-				&lt;label for=&#34;height-input&#34; class=&#34;mdc-floating-label&#34;&gt;Height&lt;/label&gt;
-			&lt;/div&gt;
-			&lt;div class=&#34;mdc-notched-outline__trailing&#34;&gt;&lt;/div&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&#34;mdc-layout-grid__cell mdc-layout-grid__cell--span-1&#34;&gt;
-	&lt;div class=&#34;mdc-text-field mdc-text-field--outlined&#34;&gt;
-		&lt;input type=&#34;text&#34; id=&#34;width-input&#34; class=&#34;mdc-text-field__input&#34; value=&#34;300&#34;&gt;
-		&lt;div class=&#34;mdc-notched-outline&#34;&gt;
-			&lt;div class=&#34;mdc-notched-outline__leading&#34;&gt;&lt;/div&gt;
-			&lt;div class=&#34;mdc-notched-outline__notch&#34;&gt;
-				&lt;label for=&#34;width-input&#34; class=&#34;mdc-floating-label&#34;&gt;Width&lt;/label&gt;
-			&lt;/div&gt;
-			&lt;div class=&#34;mdc-notched-outline__trailing&#34;&gt;&lt;/div&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&#34;mdc-layout-grid__cell mdc-layout-grid__cell--span-2&#34;&gt;
-	&lt;div class=&#34;mdc-text-field mdc-text-field--outlined&#34;&gt;
-		&lt;input type=&#34;text&#34; id=&#34;iterations-input&#34; class=&#34;mdc-text-field__input&#34; value=&#34;100&#34;&gt;
-		&lt;div class=&#34;mdc-notched-outline&#34;&gt;
-			&lt;div class=&#34;mdc-notched-outline__leading&#34;&gt;&lt;/div&gt;
-			&lt;div class=&#34;mdc-notched-outline__notch&#34;&gt;
-				&lt;label for=&#34;iterations-input&#34; class=&#34;mdc-floating-label&#34;&gt;Iterations per frame&lt;/label&gt;
-			&lt;/div&gt;
-			&lt;div class=&#34;mdc-notched-outline__trailing&#34;&gt;&lt;/div&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&#34;mdc-layout-grid__cell mdc-layout-grid__cell--span-2&#34;&gt;
-	&lt;button id=&#34;download-button&#34; class=&#34;mdc-button mdc-button--raised lab-button--fullwidth&#34;&gt;
-		&lt;span class=&#34;mdc-button__label&#34;&gt;Download image&lt;/span&gt;
-	&lt;/button&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Fractals and julia sets</title>
-      <link>https://prince-leto.github.io/Letos-Lab/canvas/fractals-and-julia-sets/</link>
-      <pubDate>Sun, 05 Feb 2012 00:00:00 +0100</pubDate>
-      
-      <guid>https://prince-leto.github.io/Letos-Lab/canvas/fractals-and-julia-sets/</guid>
-      <description>&lt;div class=&#34;mdc-layout-grid__cell mdc-layout-grid__cell--span-2&#34;&gt;
-	&lt;button id=&#34;draw-button&#34; class=&#34;mdc-button mdc-button--raised lab-button--fullwidth&#34;&gt;
-		&lt;span class=&#34;mdc-button__label&#34;&gt;Draw&lt;/span&gt;
-	&lt;/button&gt;
-&lt;/div&gt;
-
-&lt;div class=&#34;mdc-layout-grid__cell mdc-layout-grid__cell--span-2&#34;&gt;
-	&lt;div class=&#34;mdc-text-field mdc-text-field--outlined&#34;&gt;
-		&lt;input type=&#34;text&#34; id=&#34;width-input&#34; class=&#34;mdc-text-field__input&#34; value=&#34;10&#34; pattern=&#34;[0-9]+&#34;&gt;
-		&lt;div class=&#34;mdc-notched-outline&#34;&gt;
-			&lt;div class=&#34;mdc-notched-outline__leading&#34;&gt;&lt;/div&gt;
-			&lt;div class=&#34;mdc-notched-outline__notch&#34;&gt;
-				&lt;label for=&#34;width-input&#34; class=&#34;mdc-floating-label&#34;&gt;Width (px)&lt;/label&gt;
-			&lt;/div&gt;
-			&lt;div class=&#34;mdc-notched-outline__trailing&#34;&gt;&lt;/div&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&#34;mdc-layout-grid__cell mdc-layout-grid__cell--span-2&#34;&gt;
-	&lt;div class=&#34;mdc-text-field mdc-text-field--outlined&#34;&gt;
-		&lt;input type=&#34;text&#34; id=&#34;threshold-input&#34; class=&#34;mdc-text-field__input&#34; value=&#34;100&#34; pattern=&#34;[0-9]+&#34;&gt;
-		&lt;div class=&#34;mdc-notched-outline&#34;&gt;
-			&lt;div class=&#34;mdc-notched-outline__leading&#34;&gt;&lt;/div&gt;
-			&lt;div class=&#34;mdc-notched-outline__notch&#34;&gt;
-				&lt;label for=&#34;threshold-input&#34; class=&#34;mdc-floating-label&#34;&gt;Threshold&lt;/label&gt;
-			&lt;/div&gt;
-			&lt;div class=&#34;mdc-notched-outline__trailing&#34;&gt;&lt;/div&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&#34;mdc-layout-grid__cell mdc-layout-grid__cell--span-1&#34;&gt;
-	&lt;div class=&#34;mdc-text-field mdc-text-field--outlined&#34;&gt;
-		&lt;input type=&#34;text&#34; id=&#34;lower-abscissa-input&#34; class=&#34;mdc-text-field__input&#34; value=&#34;-2&#34;&gt;
-		&lt;div class=&#34;mdc-notched-outline&#34;&gt;
-			&lt;div class=&#34;mdc-notched-outline__leading&#34;&gt;&lt;/div&gt;
-			&lt;div class=&#34;mdc-notched-outline__notch&#34;&gt;
-				&lt;label for=&#34;lower-abscissa-input&#34; class=&#34;mdc-floating-label&#34;&gt;Lower abscissa&lt;/label&gt;
-			&lt;/div&gt;
-			&lt;div class=&#34;mdc-notched-outline__trailing&#34;&gt;&lt;/div&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&#34;mdc-layout-grid__cell mdc-layout-grid__cell--span-1&#34;&gt;
-	&lt;div class=&#34;mdc-text-field mdc-text-field--outlined&#34;&gt;
-		&lt;input type=&#34;text&#34; id=&#34;upper-abscissa-input&#34; class=&#34;mdc-text-field__input&#34; value=&#34;2&#34;&gt;
-		&lt;div class=&#34;mdc-notched-outline&#34;&gt;
-			&lt;div class=&#34;mdc-notched-outline__leading&#34;&gt;&lt;/div&gt;
-			&lt;div class=&#34;mdc-notched-outline__notch&#34;&gt;
-				&lt;label for=&#34;upper-abscissa-input&#34; class=&#34;mdc-floating-label&#34;&gt;Upper abscissa&lt;/label&gt;
-			&lt;/div&gt;
-			&lt;div class=&#34;mdc-notched-outline__trailing&#34;&gt;&lt;/div&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&#34;mdc-layout-grid__cell mdc-layout-grid__cell--span-1&#34;&gt;
-	&lt;div class=&#34;mdc-text-field mdc-text-field--outlined&#34;&gt;
-		&lt;input type=&#34;text&#34; id=&#34;lower-ordinate-input&#34; class=&#34;mdc-text-field__input&#34; value=&#34;-2&#34;&gt;
-		&lt;div class=&#34;mdc-notched-outline&#34;&gt;
-			&lt;div class=&#34;mdc-notched-outline__leading&#34;&gt;&lt;/div&gt;
-			&lt;div class=&#34;mdc-notched-outline__notch&#34;&gt;
-				&lt;label for=&#34;lower-ordinate-input&#34; class=&#34;mdc-floating-label&#34;&gt;Lower ordinate&lt;/label&gt;
-			&lt;/div&gt;
-			&lt;div class=&#34;mdc-notched-outline__trailing&#34;&gt;&lt;/div&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&#34;mdc-layout-grid__cell mdc-layout-grid__cell--span-1&#34;&gt;
-	&lt;div class=&#34;mdc-text-field mdc-text-field--outlined&#34;&gt;
-		&lt;input type=&#34;text&#34; id=&#34;upper-ordinate-input&#34; class=&#34;mdc-text-field__input&#34; value=&#34;2&#34;&gt;
-		&lt;div class=&#34;mdc-notched-outline&#34;&gt;
-			&lt;div class=&#34;mdc-notched-outline__leading&#34;&gt;&lt;/div&gt;
-			&lt;div class=&#34;mdc-notched-outline__notch&#34;&gt;
-				&lt;label for=&#34;upper-ordinate-input&#34; class=&#34;mdc-floating-label&#34;&gt;Upper ordinate&lt;/label&gt;
-			&lt;/div&gt;
-			&lt;div class=&#34;mdc-notched-outline__trailing&#34;&gt;&lt;/div&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&#34;mdc-layout-grid__cell mdc-layout-grid__cell--span-2&#34;&gt;
-	&lt;button id=&#34;download-button&#34; class=&#34;mdc-button mdc-button--raised lab-button--fullwidth&#34;&gt;
-		&lt;span class=&#34;mdc-button__label&#34;&gt;Download image&lt;/span&gt;
-	&lt;/button&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Game of life</title>
-      <link>https://prince-leto.github.io/Letos-Lab/canvas/game-of-life/</link>
+      <link>https://localhost/canvas/game-of-life/</link>
       <pubDate>Wed, 26 Oct 2011 00:00:00 +0100</pubDate>
       
-      <guid>https://prince-leto.github.io/Letos-Lab/canvas/game-of-life/</guid>
+      <guid>https://localhost/canvas/game-of-life/</guid>
       <description>&lt;div class=&#34;mdc-layout-grid__cell mdc-layout-grid__cell--span-1&#34;&gt;
 	&lt;button id=&#34;play-button&#34; class=&#34;mdc-button mdc-button--raised lab-button--fullwidth&#34; disabled&gt;
 		&lt;span class=&#34;mdc-button__label&#34;&gt;&lt;i class=&#34;material-icons&#34;&gt;play_arrow&lt;/i&gt;&lt;/span&gt;
