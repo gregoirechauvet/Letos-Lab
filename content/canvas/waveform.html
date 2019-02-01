@@ -1,0 +1,43 @@
++++
+date = "2019-01-02T14:40:56+01:00"
+title = "Waveform 3D"
+thumbnail = "waveform.png"
+canvasscript = "waveform.js"
+draft=true
+description = """
+3D waveform
+"""
++++
+
+<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
+	<audio controls="auto" preload="preload" style="width: 100%;">
+		<!-- TODO: BaseURL -->
+		<source src="/waveform/ex-machina.mp3" type="audio/mpeg"/>
+	</audio>
+</div>
+
+<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-1">
+	<div class="mdc-text-field mdc-text-field--outlined">
+		<input type="text" id="height-input" class="mdc-text-field__input" value="200">
+		<div class="mdc-notched-outline">
+			<div class="mdc-notched-outline__leading"></div>
+			<div class="mdc-notched-outline__notch">
+				<label for="height-input" class="mdc-floating-label">Height (px)</label>
+			</div>
+			<div class="mdc-notched-outline__trailing"></div>
+		</div>
+	</div>
+</div>
+
+<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-1">
+	<div class="mdc-text-field mdc-text-field--outlined">
+		<input type="text" id="width-input" class="mdc-text-field__input" value="300">
+		<div class="mdc-notched-outline">
+			<div class="mdc-notched-outline__leading"></div>
+			<div class="mdc-notched-outline__notch">
+				<label for="width-input" class="mdc-floating-label">Width (px)</label>
+			</div>
+			<div class="mdc-notched-outline__trailing"></div>
+		</div>
+	</div>
+</div>
