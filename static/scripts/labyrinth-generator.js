@@ -1,5 +1,12 @@
+function drawPath(context, width, height, size, path) {
+	context.fillStyle = 'rgba(0, 0, 255, 0.6)';
+	path.forEach(cell => {
+		context.fillRect(cell[0] * size, cell[1] * size, size, size);
+	});
+}
+
 function draw(context, width, height, size, data) {
-	const [xWalls, yWalls, visited, history] = data;
+	const [xWalls, yWalls, visited, start, goal] = data;
 
 	context.clearRect(0, 0, width * size, height * size);
 	context.lineWidth = 2;
@@ -35,6 +42,12 @@ function draw(context, width, height, size, data) {
 	context.lineTo(0, 0);
 	context.stroke();
 	context.closePath();
+
+	context.fillStyle = 'rgba(0, 255, 0, 0.6)';
+	context.fillRect(start[0] * size, start[1] * size, size, size);
+
+	context.fillStyle = 'rgba(255, 0, 0, 0.6)';
+	context.fillRect(goal[0] * size, goal[1] * size, size, size);
 }
 
 function unvisitedNeighboors(width, height, currentPosition, visited) {
@@ -123,7 +136,9 @@ function init(width, height) {
 	const start = [0, 0];
 	visited[start[0]][start[1]] = true;
 
-	return [xWalls, yWalls, visited, start];
+	const goal = [width - 1, height - 1];
+
+	return [xWalls, yWalls, visited, start, goal];
 }
 
 function initCanvas(canvas, width, height, size) {
@@ -177,8 +192,13 @@ function b64toBlob(dataURI) {
 function availableNeighboors(width, height, currentPosition, visited, xWalls, yWalls) {
 	const [x, y] = currentPosition;
 	const output = [];
-	[[x - 1, y, xWalls], [x + 1, y, xWalls], [x, y - 1, yWalls], [x, y + 1, yWalls]].forEach(([a, b, walls]) => {
-		if (a >= 0 && a < width && b >= 0 && b < height && !visited[a][b] && !walls[a][b]) {
+	[
+		[x - 1, y, x - 1, y, yWalls],
+		[x + 1, y, x, y, yWalls],
+		[x, y - 1, x, y - 1, xWalls],
+		[x, y + 1, x, y, xWalls]
+	].forEach(([a, b, c, d, walls]) => {
+		if (a >= 0 && a < width && b >= 0 && b < height && !visited[a][b] && !walls[c][d]) {
 			output.push([a, b]);
 		}
 	});
@@ -186,11 +206,36 @@ function availableNeighboors(width, height, currentPosition, visited, xWalls, yW
 	return output;
 }
 
+function solveStep(width, height, data, currentPosition, searched, path) {
+	const [xWalls, yWalls] = data;
+	const neighboors = availableNeighboors(width, height, currentPosition, searched, xWalls, yWalls);
+
+	if (neighboors.length !== 0) {
+		currentPosition = neighboors[0];
+		searched[currentPosition[0]][currentPosition[1]] = true;
+		path.push(currentPosition);
+	} else {
+		path.pop();
+		currentPosition = path[path.length - 1];
+	}
+
+	return currentPosition;
+}
+
 function solve(width, height, data) {
-	const [xWalls, yWalls, visited, start] = data;
+	const [xWalls, yWalls, visited, start, goal] = data;
+
 	let currentPosition = start;
-	const history = [currentPosition];
-	// console.log(availableNeighboors(width, height, currentPosition, visited.map(hop => hop.map(() => false)), xWalls, yWalls));
+	const path = [currentPosition];
+
+	const searched = visited.map(row => row.map(cell => false));
+	searched[currentPosition[0]][currentPosition[1]] = true;
+
+	while (currentPosition[0] !== goal[0] || currentPosition[1] !== goal[1]) {
+		currentPosition = solveStep(width, height, data, currentPosition, searched, path);
+	}
+
+	return path;
 }
 
 function isSolvable(state) {
@@ -204,7 +249,7 @@ window.addEventListener('load', () => {
 	let frameId = null;
 	let data = null;
 
-	const cancel = () => {
+	const stop = () => {
 		cancelAnimationFrame(frameId);
 	}
 
@@ -213,7 +258,7 @@ window.addEventListener('load', () => {
 	}
 
 	const hop = () => {
-		cancel();
+		stop();
 
 		const { width, height, animation, autoSeed, userSeed, size } = readValues();
 		// const data = init(width, height);
@@ -229,7 +274,7 @@ window.addEventListener('load', () => {
 			const [xWalls, yWalls, visited, start] = data;
 			let currentPosition = start;
 
-			const loop = (timestamp) => {
+			const loop = () => {
 				currentPosition = step(width, height, random, data, currentPosition);
 				draw(context, width, height, size, data);
 
@@ -238,7 +283,7 @@ window.addEventListener('load', () => {
 				} else {
 					isSolvable(true);
 				}
-			}
+			};
 
 			run(loop);
 		} else {
@@ -254,7 +299,34 @@ window.addEventListener('load', () => {
 
 	document.querySelector('#solve-button').addEventListener('click', () => {
 		const { width, height, animation, autoSeed, userSeed, size } = readValues();
-		solve(width, height, data);
+
+		if (animation) {
+			stop();
+
+			const [xWalls, yWalls, visited, start, goal] = data;
+
+			let currentPosition = start;
+			const path = [currentPosition];
+
+			const searched = visited.map(row => row.map(cell => false));
+			searched[currentPosition[0]][currentPosition[1]] = true;
+
+			const loop = () => {
+				currentPosition = solveStep(width, height, data, currentPosition, searched, path);
+				draw(context, width, height, size, data);
+				drawPath(context, width, height, size, path);
+
+				if (currentPosition[0] !== goal[0] || currentPosition[1] !== goal[1]) {
+					run(loop);
+				}
+			};
+
+			run(loop);
+		} else {
+			const path = solve(width, height, data);
+			draw(context, width, height, size, data);
+			drawPath(context, width, height, size, path);
+		}
 	});
 
 	document.querySelector('#auto-seed-input').addEventListener('change', function() {
