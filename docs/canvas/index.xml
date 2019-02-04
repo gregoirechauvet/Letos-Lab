@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Canvas on Leto&#39;s Lab</title>
-    <link>https://localhost/canvas/index.xml</link>
+    <link>https://prince-leto.github.io/Letos-Lab/canvas/index.xml</link>
     <description>Recent content in Canvas on Leto&#39;s Lab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 17 Nov 2012 00:00:00 +0100</lastBuildDate>
-    <atom:link href="https://localhost/canvas/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://prince-leto.github.io/Letos-Lab/canvas/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Labyrinth generator</title>
-      <link>https://localhost/canvas/labyrinth-generator/</link>
+      <link>https://prince-leto.github.io/Letos-Lab/canvas/labyrinth-generator/</link>
       <pubDate>Sat, 17 Nov 2012 00:00:00 +0100</pubDate>
       
-      <guid>https://localhost/canvas/labyrinth-generator/</guid>
+      <guid>https://prince-leto.github.io/Letos-Lab/canvas/labyrinth-generator/</guid>
       <description>&lt;div class=&#34;mdc-layout-grid__cell mdc-layout-grid__cell--span-2&#34;&gt;
 	&lt;div class=&#34;mdc-form-field&#34;&gt;
 		&lt;div class=&#34;mdc-checkbox&#34;&gt;
@@ -119,10 +119,10 @@
     
     <item>
       <title>Game of life</title>
-      <link>https://localhost/canvas/game-of-life/</link>
+      <link>https://prince-leto.github.io/Letos-Lab/canvas/game-of-life/</link>
       <pubDate>Wed, 26 Oct 2011 00:00:00 +0100</pubDate>
       
-      <guid>https://localhost/canvas/game-of-life/</guid>
+      <guid>https://prince-leto.github.io/Letos-Lab/canvas/game-of-life/</guid>
       <description>&lt;div class=&#34;mdc-layout-grid__cell mdc-layout-grid__cell--span-1&#34;&gt;
 	&lt;button id=&#34;play-button&#34; class=&#34;mdc-button mdc-button--raised lab-button--fullwidth&#34; disabled&gt;
 		&lt;span class=&#34;mdc-button__label&#34;&gt;&lt;i class=&#34;material-icons&#34;&gt;play_arrow&lt;/i&gt;&lt;/span&gt;

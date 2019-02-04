@@ -2,22 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://localhost/canvas/labyrinth-generator/</loc>
+    <loc>https://prince-leto.github.io/Letos-Lab/canvas/labyrinth-generator/</loc>
     <lastmod>2012-11-17T00:00:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://localhost/canvas/game-of-life/</loc>
+    <loc>https://prince-leto.github.io/Letos-Lab/canvas/game-of-life/</loc>
     <lastmod>2011-10-26T00:00:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://localhost/</loc>
+    <loc>https://prince-leto.github.io/Letos-Lab/</loc>
     <lastmod>2012-11-17T00:00:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://localhost/canvas/</loc>
+    <loc>https://prince-leto.github.io/Letos-Lab/canvas/</loc>
     <lastmod>2012-11-17T00:00:00+01:00</lastmod>
     <priority>0</priority>
   </url>
