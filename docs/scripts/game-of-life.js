@@ -94,7 +94,7 @@ window.addEventListener('load', () => {
 
 	let frameId = null;
 
-	const start = (loop) => {
+	const run = (loop) => {
 		frameId = requestAnimationFrame(loop);
 	}
 
