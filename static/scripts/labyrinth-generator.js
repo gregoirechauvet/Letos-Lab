@@ -179,14 +179,14 @@ function saveSeed(seed) {
 
 function b64toBlob(dataURI) {
 	// https://stackoverflow.com/questions/27980612/converting-base64-to-blob-in-javascript
-    const byteString = atob(dataURI.split(',')[1]);
-    const ab = new ArrayBuffer(byteString.length);
-    const ia = new Uint8Array(ab);
+	const byteString = atob(dataURI.split(',')[1]);
+	const ab = new ArrayBuffer(byteString.length);
+	const ia = new Uint8Array(ab);
 
-    for (let i = 0; i < byteString.length; i++) {
-        ia[i] = byteString.charCodeAt(i);
-    }
-    return new Blob([ab], { type: 'image/png' });
+	for (let i = 0; i < byteString.length; i++) {
+		ia[i] = byteString.charCodeAt(i);
+	}
+	return new Blob([ab], { type: 'image/png' });
 }
 
 function availableNeighboors(width, height, currentPosition, visited, xWalls, yWalls) {

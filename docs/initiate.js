@@ -27,12 +27,6 @@ window.addEventListener('load', () => {
 		mdc.textField.MDCTextField.attachTo(textField);
 	});
 
-	// Not sure if it's useful:
-	// const helperTexts = document.querySelectorAll('mdc-text-field-helper-text');
-	// helperTexts.forEach(helperText => {
-	// 	mdc.textField.helperText.MDCTextFieldHelperText.attachTo(helperText);
-	// });
-
 	// FormFields with checkbox
 	const formfields = document.querySelectorAll('.mdc-form-field');
 	formfields.forEach(field => {
