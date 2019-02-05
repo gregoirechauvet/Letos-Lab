@@ -1,5 +1,5 @@
 # Leto's Lab
-https://prince-leto.github.io/Letos-Lab/
+https://prince-leto.github.io/
 
 My personnal website, initially started when I was learning coding, modernised because I was ashamed of how poorly it was written :smiley:
 

@@ -4,12 +4,11 @@
 	<title>{{ .Title }} – {{ .Site.Title }}</title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<link rel="icon" type="image/png" href="{{ .Site.BaseURL }}favicon.png"/>
+	<link rel="icon" type="image/png" href="{{ "favicon.png" | relURL }}"/>
 
 	<!-- Use Seedrandom -->
 	<!-- Because vanilla JS does not have a seeded random generator -->
-	<script src="//cdnjs.cloudflare.com/ajax/libs/seedrandom/2.4.4/seedrandom.min.js">
-	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/2.4.4/seedrandom.min.js"></script>
 
 	<!-- Material Components -->
 	<link rel="stylesheet" type="text/css" href="https://unpkg.com/material-components-web@0.44.0/dist/material-components-web.min.css"/>
@@ -19,8 +18,8 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
 
 	<!-- Personnal content -->
-	<link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}styles.css"/>
-	<script type="text/javascript" src="{{ .Site.BaseURL }}initiate.js"></script>
+	<link rel="stylesheet" type="text/css" href="{{ "styles.css" | relURL }}"/>
+	<script type="text/javascript" src="{{ "initiate.js" | relURL }}"></script>
 
 	{{ block "scripts" . }}
 	{{ end }}
