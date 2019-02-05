@@ -27,6 +27,7 @@ body {
 /* CANVAS */
 #draw {
   display: block;
+  margin: 10px;
 }
 
 

@@ -3,6 +3,9 @@
 {{ end }}
 
 {{ define "main" }}
+
+	{{ partial "header-drawer.html" . }}
+
 	<aside class="mdc-drawer mdc-drawer--dismissible mdc-top-app-bar--fixed-adjust">
 		<div class="mdc-drawer__content">
 			<div class="mdc-layout-grid">
@@ -18,4 +21,5 @@
 			<canvas id="draw"></canvas>
 		</main>
 	</div>
+
 {{ end }}

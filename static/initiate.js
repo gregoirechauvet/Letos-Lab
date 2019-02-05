@@ -14,7 +14,9 @@ window.addEventListener('load', () => {
 
 	const mainContentElement = document.querySelector('#main-content');
 	if (mainContentElement) {
-		topAppBar.setScrollTarget(mainContentElement);
+		// This create an issue when scrolling, the top app bar is disappearing
+		// and leaving a empty top that I don't know how to fix
+		// topAppBar.setScrollTarget(mainContentElement);
 	}
 
 	const buttons = document.querySelectorAll('.mdc-button');
