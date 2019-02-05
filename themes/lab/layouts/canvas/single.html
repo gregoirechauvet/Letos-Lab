@@ -1,9 +1,9 @@
-{{ define "scripts" }}
-	<script type="text/javascript" src="/scripts/{{ .Params.canvasscript }}"></script>
+{{ define "head" }}
+	<link rel="stylesheet" type="text/css" href="{{ "drawer.css" | relURL }}"/>
+	<script type="text/javascript" src="{{ path.Join "scripts" .Params.canvasscript | relURL }}"></script>
 {{ end }}
 
 {{ define "main" }}
-
 	{{ partial "header-drawer.html" . }}
 
 	<aside class="mdc-drawer mdc-drawer--dismissible mdc-top-app-bar--fixed-adjust">
@@ -21,5 +21,4 @@
 			<canvas id="draw"></canvas>
 		</main>
 	</div>
-
 {{ end }}
