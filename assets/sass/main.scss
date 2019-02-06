@@ -1,0 +1,13 @@
+$mdc-theme-primary: #1193c3;
+$mdc-theme-secondary: #6200ee;
+
+@import "@material/layout-grid/mdc-layout-grid";
+@import "@material/typography/mdc-typography";
+
+@import "@material/form-field/mdc-form-field";
+@import "@material/checkbox/mdc-checkbox";
+@import "@material/card/mdc-card";
+@import "@material/top-app-bar/mdc-top-app-bar";
+@import "@material/textfield/mdc-text-field";
+@import "@material/button/mdc-button";
+@import "@material/drawer/mdc-drawer";

@@ -1,0 +1,30 @@
+{
+  "name": "lab",
+  "version": "2.0.0-beta",
+  "description": "Leto's Lab",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Prince-Leto/Letos-Lab.git"
+  },
+  "author": "Grégoire Chauvet",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Prince-Leto/Letos-Lab/issues"
+  },
+  "homepage": "https://github.com/Prince-Leto/Letos-Lab#readme",
+  "dependencies": {
+    "@material/button": "^0.44.0",
+    "@material/card": "^0.44.0",
+    "@material/checkbox": "^0.44.0",
+    "@material/drawer": "^0.44.0",
+    "@material/form-field": "^0.44.0",
+    "@material/layout-grid": "^0.41.0",
+    "@material/textfield": "^0.44.0",
+    "@material/top-app-bar": "^0.44.0",
+    "@material/typography": "^0.44.0"
+  }
+}

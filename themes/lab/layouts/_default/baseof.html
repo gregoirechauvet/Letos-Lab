@@ -11,7 +11,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/2.4.4/seedrandom.min.js"></script>
 
 	<!-- Material Components -->
-	<link rel="stylesheet" type="text/css" href="https://unpkg.com/material-components-web@0.44.0/dist/material-components-web.min.css"/>
+	<!-- <link rel="stylesheet" type="text/css" href="https://unpkg.com/material-components-web@0.44.0/dist/material-components-web.min.css"/> -->
 	<script type="text/javascript" src="https://unpkg.com/material-components-web@0.44.0/dist/material-components-web.min.js"></script>
 
 	<!-- Material icons -->
@@ -19,8 +19,11 @@
 
 	<!-- Personnal content -->
 	<link rel="stylesheet" type="text/css" href="{{ "styles.css" | relURL }}"/>
-	<link rel="stylesheet" type="text/css" href="{{ "colors.css" | relURL }}"/>
-	<script type="text/javascript" src="{{ "initiate.js" | relURL }}"></script>
+	<script defer src="{{ "initiate.js" | relURL }}"></script>
+
+	{{ $options := (dict "targetPath" "style.css" "outputStyle" "compressed" "enableSourceMap" false "includePaths" (slice "./node_modules")) }}
+  {{ $material := resources.Get "sass/main.scss" | resources.ToCSS $options | resources.Fingerprint }}
+  <link rel="stylesheet" type="text/css" href="{{ $material.Permalink }}" integrity="{{ $material.Data.Integrity }}"/>
 
 	{{ block "head" . }}
 	{{ end }}
