@@ -1,6 +1,20 @@
 {{ define "head" }}
 	<link rel="stylesheet" type="text/css" href="{{ "drawer.css" | relURL }}"/>
-	<script type="text/javascript" src="{{ path.Join "scripts" .Params.canvasscript | relURL }}"></script>
+
+	{{ range .Params.dependencies }}
+		{{ $path := path.Join "scripts" . }}
+		{{ $js := resources.Get $path }}
+		<script defer type="text/javascript" src="{{ $js.Permalink }}"></script>
+	{{ end }}
+
+	{{ $path := path.Join "scripts" .Params.canvasscript }}
+	{{ $js := resources.Get $path }}
+	{{ if .Site.IsServer }}
+		<script defer type="text/javascript" src="{{ $js.Permalink }}"></script>
+	{{ else }}
+		{{ $script := $js | resources.Minify | resources.Fingerprint }}
+		<script defer type="text/javascript" src="{{ $script.Permalink }}" integrity="{{ $script.Data.Integrity }}"></script>
+	{{ end }}
 {{ end }}
 
 {{ define "main" }}

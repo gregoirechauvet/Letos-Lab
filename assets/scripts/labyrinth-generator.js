@@ -167,7 +167,7 @@ function readValues() {
 		width: Number(document.querySelector('#width-input').value),
 		height: Number(document.querySelector('#height-input').value),
 		size: Number(document.querySelector('#size-input').value),
-		animation: document.querySelector('#animation-input').checked,
+		animated: document.querySelector('#animated-input').checked,
 		autoSeed: document.querySelector('#auto-seed-input').checked,
 		userSeed: document.querySelector('#seed-input').value
 	};
@@ -175,18 +175,6 @@ function readValues() {
 
 function saveSeed(seed) {
 	document.querySelector('#seed-input').value = seed;
-}
-
-function b64toBlob(dataURI) {
-	// https://stackoverflow.com/questions/27980612/converting-base64-to-blob-in-javascript
-	const byteString = atob(dataURI.split(',')[1]);
-	const ab = new ArrayBuffer(byteString.length);
-	const ia = new Uint8Array(ab);
-
-	for (let i = 0; i < byteString.length; i++) {
-		ia[i] = byteString.charCodeAt(i);
-	}
-	return new Blob([ab], { type: 'image/png' });
 }
 
 function availableNeighboors(width, height, currentPosition, visited, xWalls, yWalls) {
@@ -260,7 +248,7 @@ window.addEventListener('load', () => {
 	const hop = () => {
 		stop();
 
-		const { width, height, animation, autoSeed, userSeed, size } = readValues();
+		const { width, height, animated, autoSeed, userSeed, size } = readValues();
 		// const data = init(width, height);
 		data = init(width, height);
 
@@ -269,7 +257,7 @@ window.addEventListener('load', () => {
 		const random = initRandom(seed);
 		initCanvas(canvas, width, height, size);
 
-		if (animation) {
+		if (animated) {
 			isSolvable(false);
 			const [xWalls, yWalls, visited, start] = data;
 			let currentPosition = start;
@@ -298,9 +286,9 @@ window.addEventListener('load', () => {
 	});
 
 	document.querySelector('#solve-button').addEventListener('click', () => {
-		const { width, height, animation, autoSeed, userSeed, size } = readValues();
+		const { width, height, animated, autoSeed, userSeed, size } = readValues();
 
-		if (animation) {
+		if (animated) {
 			stop();
 
 			const [xWalls, yWalls, visited, start, goal] = data;
@@ -336,10 +324,7 @@ window.addEventListener('load', () => {
 	});
 
 	document.querySelector('#download-button').addEventListener('click', () => {
-		// Chrome is preventing to open base64 files programmatically
-		// The workaround is to use a blob
-		const blob = b64toBlob(canvas.toDataURL());
-		window.open(URL.createObjectURL(blob));
+		openImageInNewTab(canvas);
 	});
 
 	hop();

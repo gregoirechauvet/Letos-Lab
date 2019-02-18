@@ -1,10 +1,10 @@
 +++
-date = "2012-11-17T00:00:00+01:00"
-title = "Labyrinth generator"
-thumbnail = "labyrinth.png"
-canvasscript = "labyrinth-generator.js"
+date = "2018-08-15T00:00:00+01:00"
+title = "Recaman sequence"
+thumbnail = "recaman-sequence.png"
+canvasscript = "recaman-sequence.js"
 description = """
-A simple labyrinth generator
+Drawing the Recaman sequence
 """
 dependencies = ["export-image.js"]
 +++
@@ -12,7 +12,7 @@ dependencies = ["export-image.js"]
 <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
 	<div class="mdc-form-field">
 		<div class="mdc-checkbox">
-			<input type="checkbox" class="mdc-checkbox__native-control" id="animated-input"/>
+			<input type="checkbox" class="mdc-checkbox__native-control" id="animated-input" disabled/>
 			<div class="mdc-checkbox__background">
 				<svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
 					<path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
@@ -25,50 +25,19 @@ dependencies = ["export-image.js"]
 </div>
 
 <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
-	<button id="generate-button" class="mdc-button mdc-button--raised lab-button--fullwidth">
-		<span class="mdc-button__label">Generate</span>
-	</button>
-</div>
-
-<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
-	<button id="solve-button" class="mdc-button mdc-button--raised lab-button--fullwidth" disabled>
-		<span class="mdc-button__label">Solve</span>
+	<button id="draw-button" class="mdc-button mdc-button--raised lab-button--fullwidth">
+		<span class="mdc-button__label">Draw</span>
 	</button>
 </div>
 
 <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
 	<div class="mdc-text-field mdc-text-field--outlined">
-		<input type="text" id="size-input" class="mdc-text-field__input" value="10" pattern="[0-9]+">
+		<!-- Use pattern validation, because mdc does not support number fields -->
+		<input type="text" id="scale-input" class="mdc-text-field__input" value="7" pattern="[0-9]+|[0.9]+\.[0-9]+">
 		<div class="mdc-notched-outline">
 			<div class="mdc-notched-outline__leading"></div>
 			<div class="mdc-notched-outline__notch">
-				<label for="size-input" class="mdc-floating-label">Cell size (px)</label>
-			</div>
-			<div class="mdc-notched-outline__trailing"></div>
-		</div>
-	</div>
-</div>
-
-<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-1">
-	<div class="mdc-text-field mdc-text-field--outlined">
-		<input type="text" id="width-input" class="mdc-text-field__input" value="50" pattern="[0-9]+">
-		<div class="mdc-notched-outline">
-			<div class="mdc-notched-outline__leading"></div>
-			<div class="mdc-notched-outline__notch">
-				<label for="width-input" class="mdc-floating-label">Width</label>
-			</div>
-			<div class="mdc-notched-outline__trailing"></div>
-		</div>
-	</div>
-</div>
-
-<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-1">
-	<div class="mdc-text-field mdc-text-field--outlined">
-		<input type="text" id="height-input" class="mdc-text-field__input" value="40" pattern="[0-9]+">
-		<div class="mdc-notched-outline">
-			<div class="mdc-notched-outline__leading"></div>
-			<div class="mdc-notched-outline__notch">
-				<label for="height-input" class="mdc-floating-label">Height</label>
+				<label for="scale-input" class="mdc-floating-label">Scale</label>
 			</div>
 			<div class="mdc-notched-outline__trailing"></div>
 		</div>
@@ -76,27 +45,41 @@ dependencies = ["export-image.js"]
 </div>
 
 <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
-	<div class="mdc-form-field">
-		<div class="mdc-checkbox">
-			<input type="checkbox" class="mdc-checkbox__native-control" id="auto-seed-input" checked/>
-			<div class="mdc-checkbox__background">
-				<svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-					<path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
-				</svg>
-				<div class="mdc-checkbox__mixedmark"></div>
+	<div class="mdc-text-field mdc-text-field--outlined">
+		<!-- Use pattern validation, because mdc does not support number fields -->
+		<input type="text" id="max-iteration-input" class="mdc-text-field__input" value="65" pattern="[0-9]+">
+		<div class="mdc-notched-outline">
+			<div class="mdc-notched-outline__leading"></div>
+			<div class="mdc-notched-outline__notch">
+				<label for="max-iteration-input" class="mdc-floating-label">Max iteration</label>
 			</div>
+			<div class="mdc-notched-outline__trailing"></div>
 		</div>
-		<label for="auto-seed-input">Auto seed?</label>
+	</div>
+</div>
+
+<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
+	<div class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-trailing-icon">
+		<!-- Use pattern validation, because mdc does not support number fields -->
+		<input type="text" id="hue-speed-input" class="mdc-text-field__input" value="3" pattern="[0-9]{1,2}|[12][0-9]{2}|3[0-5][0-9]|[0.9]+\.[0-9]+">
+		<div class="mdc-notched-outline">
+			<div class="mdc-notched-outline__leading"></div>
+			<div class="mdc-notched-outline__notch">
+				<label for="hue-speed-input" class="mdc-floating-label">Hue speed</label>
+			</div>
+			<div class="mdc-notched-outline__trailing"></div>
+		</div>
 	</div>
 </div>
 
 <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
 	<div class="mdc-text-field mdc-text-field--outlined mdc-text-field--disabled">
-		<input type="text" id="seed-input" class="mdc-text-field__input" value="hello" disabled>
+		<!-- Use pattern validation, because mdc does not support number fields -->
+		<input type="text" id="draw-speed-input" class="mdc-text-field__input" value="2" pattern="[0-9]+|[0.9]+\.[0-9]+" disabled>
 		<div class="mdc-notched-outline">
 			<div class="mdc-notched-outline__leading"></div>
 			<div class="mdc-notched-outline__notch">
-				<label for="seed-input" class="mdc-floating-label">Seed</label>
+				<label for="draw-speed-input" class="mdc-floating-label">Draw speed</label>
 			</div>
 			<div class="mdc-notched-outline__trailing"></div>
 		</div>
