@@ -11,8 +11,6 @@ body {
 
 .main-content {
   display: flex;
-  align-items: center;
-  justify-content: center;
   overflow: auto;
   height: 100%;
 }
@@ -23,4 +21,8 @@ body {
 
 .mdc-top-app-bar {
   z-index: 7;
+}
+
+.center-container {
+  margin: auto;
 }

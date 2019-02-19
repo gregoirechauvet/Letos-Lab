@@ -1,19 +1,21 @@
 {{ define "head" }}
-	<link rel="stylesheet" type="text/css" href="{{ "drawer.css" | relURL }}"/>
+	{{ $options := (dict "targetPath" "drawer.css" "outputStyle" "compressed" "enableSourceMap" false "includePaths" (slice "./node_modules")) }}
+	{{ $drawer := resources.Get "sass/drawer.scss" | resources.ToCSS $options | resources.Fingerprint }}
+	<link rel="stylesheet" type="text/css" href="{{ $drawer.Permalink }}" integrity="{{ $drawer.Data.Integrity }}"/>
 
 	{{ range .Params.dependencies }}
 		{{ $path := path.Join "scripts" . }}
 		{{ $js := resources.Get $path }}
-		<script defer type="text/javascript" src="{{ $js.Permalink }}"></script>
+		<script type="text/javascript" src="{{ $js.Permalink }}"></script>
 	{{ end }}
 
 	{{ $path := path.Join "scripts" .Params.canvasscript }}
 	{{ $js := resources.Get $path }}
 	{{ if .Site.IsServer }}
-		<script defer type="text/javascript" src="{{ $js.Permalink }}"></script>
+		<script type="text/javascript" src="{{ $js.Permalink }}"></script>
 	{{ else }}
 		{{ $script := $js | resources.Minify | resources.Fingerprint }}
-		<script defer type="text/javascript" src="{{ $script.Permalink }}" integrity="{{ $script.Data.Integrity }}"></script>
+		<script type="text/javascript" src="{{ $script.Permalink }}" integrity="{{ $script.Data.Integrity }}"></script>
 	{{ end }}
 {{ end }}
 
@@ -32,7 +34,9 @@
 
 	<div class="mdc-drawer-app-content mdc-top-app-bar--fixed-adjust">
 		<main class="main-content" id="main-content">
-			<canvas id="draw"></canvas>
+			<div class="center-container">
+				<canvas id="draw"></canvas>
+			</div>
 		</main>
 	</div>
 {{ end }}
