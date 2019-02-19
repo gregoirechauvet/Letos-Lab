@@ -24,6 +24,8 @@
 	<!-- Personnal content -->
 	<script src="{{ "initiate.js" | relURL }}"></script>
 
+	{{ template "_internal/google_analytics_async.html" . }}
+
 	{{ block "head" . }}
 	{{ end }}
 </head>
