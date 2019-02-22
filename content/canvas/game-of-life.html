@@ -6,6 +6,7 @@ canvasscript = "game-of-life.js"
 description = """
 Conway's Game of Life is a cellular automata.
 """
+dependencies = ["common/loop.js"]
 +++
 
 <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-1">
@@ -24,6 +25,20 @@ Conway's Game of Life is a cellular automata.
 	<button id="init-button" class="mdc-button mdc-button--raised lab-button--fullwidth">
 		<span class="mdc-button__label">Initialize</span>
 	</button>
+</div>
+
+<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
+	<div class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-trailing-icon">
+		<input type="text" id="fps-input" class="mdc-text-field__input" value="60">
+		<i id="fps-play-button" class="material-icons mdc-text-field__icon" tabindex="0" role="button">play_arrow</i>
+		<div class="mdc-notched-outline">
+			<div class="mdc-notched-outline__leading"></div>
+			<div class="mdc-notched-outline__notch">
+				<label for="fps-input" class="mdc-floating-label">FPS</label>
+			</div>
+			<div class="mdc-notched-outline__trailing"></div>
+		</div>
+	</div>
 </div>
 
 <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">

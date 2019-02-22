@@ -11,7 +11,9 @@ $mdc-layout-grid-max-width: 1140px;
 @import "@material/card/mdc-card";
 @import "@material/top-app-bar/mdc-top-app-bar";
 @import "@material/textfield/mdc-text-field";
+@import "@material/textfield/icon/mdc-text-field-icon";
 @import "@material/button/mdc-button";
+@import "@material/select/mdc-select";
 @import "@material/drawer/mdc-drawer";
 
 body {

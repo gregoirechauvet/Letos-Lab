@@ -1,3 +1,5 @@
+'use strict';
+
 function drawPath(context, width, height, size, path) {
 	context.fillStyle = 'rgba(0, 0, 255, 0.6)';
 	path.forEach(cell => {
@@ -73,7 +75,7 @@ function step(width, height, random, data, currentPosition) {
 	let neighboors = unvisitedNeighboors(width, height, currentPosition, visited);
 
 	if (neighboors.length === 0) {
-		choices = [];
+		const choices = [];
 		for (let i = 0; i < width; i++) {
 			for (let j = 0; j < height; j++) {
 				if (visited[i][j] && unvisitedNeighboors(width, height, [i, j], visited).length > 0) {
@@ -90,7 +92,7 @@ function step(width, height, random, data, currentPosition) {
 	}
 
 	const neighboor = chooseItem(random, neighboors);
-	if (neighboor[0] == currentPosition[0]) {
+	if (neighboor[0] === currentPosition[0]) {
 		const y = Math.min(neighboor[1], currentPosition[1]);
 		xWalls[neighboor[0]][y] = false;
 	} else {

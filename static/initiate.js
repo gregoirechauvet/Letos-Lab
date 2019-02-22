@@ -36,4 +36,9 @@ window.addEventListener('load', () => {
 		const checkbox = mdc.checkbox.MDCCheckbox.attachTo(field.querySelector('.mdc-checkbox'));
 		field.input = checkbox;
 	});
+
+	const selects = document.querySelectorAll('.mdc-select');
+	selects.forEach(select => {
+		mdc.select.MDCSelect.attachTo(select);
+	});
 });

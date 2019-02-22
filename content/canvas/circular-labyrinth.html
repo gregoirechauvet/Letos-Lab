@@ -1,28 +1,13 @@
 +++
-date = "2012-11-17T00:00:00+01:00"
-title = "Labyrinth generator"
-thumbnail = "labyrinth.png"
-canvasscript = "labyrinth-generator.js"
+date = "2012-12-14T00:00:00+01:00"
+title = "Circular labyrinth"
+thumbnail = "circular.png"
+canvasscript = "circular-labyrinth.js"
+draft = true
 description = """
-A simple labyrinth generator
+Here is some circular labyrinths.
 """
-dependencies = ["common/export-image.js"]
 +++
-
-<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
-	<div class="mdc-form-field">
-		<div class="mdc-checkbox">
-			<input type="checkbox" class="mdc-checkbox__native-control" id="animated-input"/>
-			<div class="mdc-checkbox__background">
-				<svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-					<path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
-				</svg>
-				<div class="mdc-checkbox__mixedmark"></div>
-			</div>
-		</div>
-		<label for="animated-input">Animated</label>
-	</div>
-</div>
 
 <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
 	<button id="generate-button" class="mdc-button mdc-button--raised lab-button--fullwidth">
@@ -38,37 +23,24 @@ dependencies = ["common/export-image.js"]
 
 <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
 	<div class="mdc-text-field mdc-text-field--outlined">
-		<input type="text" id="size-input" class="mdc-text-field__input" value="10" pattern="[0-9]+">
+		<input type="text" id="number-input" class="mdc-text-field__input" value="20" pattern="[0-9]+">
 		<div class="mdc-notched-outline">
 			<div class="mdc-notched-outline__leading"></div>
 			<div class="mdc-notched-outline__notch">
-				<label for="size-input" class="mdc-floating-label">Cell size (px)</label>
+				<label for="number-input" class="mdc-floating-label">Number of spires</label>
 			</div>
 			<div class="mdc-notched-outline__trailing"></div>
 		</div>
 	</div>
 </div>
 
-<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-1">
+<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
 	<div class="mdc-text-field mdc-text-field--outlined">
-		<input type="text" id="width-input" class="mdc-text-field__input" value="50" pattern="[0-9]+">
+		<input type="text" id="size-input" class="mdc-text-field__input" value="12" pattern="[0-9]+">
 		<div class="mdc-notched-outline">
 			<div class="mdc-notched-outline__leading"></div>
 			<div class="mdc-notched-outline__notch">
-				<label for="width-input" class="mdc-floating-label">Width</label>
-			</div>
-			<div class="mdc-notched-outline__trailing"></div>
-		</div>
-	</div>
-</div>
-
-<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-1">
-	<div class="mdc-text-field mdc-text-field--outlined">
-		<input type="text" id="height-input" class="mdc-text-field__input" value="40" pattern="[0-9]+">
-		<div class="mdc-notched-outline">
-			<div class="mdc-notched-outline__leading"></div>
-			<div class="mdc-notched-outline__notch">
-				<label for="height-input" class="mdc-floating-label">Height</label>
+				<label for="size-input" class="mdc-floating-label">Size (px)</label>
 			</div>
 			<div class="mdc-notched-outline__trailing"></div>
 		</div>

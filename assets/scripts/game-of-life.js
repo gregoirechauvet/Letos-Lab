@@ -1,3 +1,5 @@
+'use strict';
+
 function step(width, height, data) {
 	const copy = [];
 
@@ -85,6 +87,7 @@ function readValues() {
 		width: Number(document.querySelector('#width-input').value),
 		height: Number(document.querySelector('#height-input').value),
 		grid: document.querySelector('#grid-input').checked,
+		fps: Number(document.querySelector('#fps-input').value)
 	};
 }
 
@@ -92,34 +95,29 @@ window.addEventListener('load', () => {
 	const canvas = document.querySelector('#draw');
 	const context = canvas.getContext('2d');
 
-	let frameId = null;
-
-	const run = (loop) => {
-		frameId = requestAnimationFrame(loop);
-	}
-
-	const stop = () => {
-		cancelAnimationFrame(frameId);
-	}
-
-	let { threshold, cellSize, width, height, grid } = readValues();
+	let { threshold, cellSize, width, height, grid, fps } = readValues();
 	initCanvas(canvas, cellSize, width, height);
 	let data = initRandom(width, height, threshold);
+
+	const loop = new Loop(() => {
+		data = step(width, height, data);
+		draw(context, cellSize, width, height, data, grid);
+	});
 
 	document.querySelector("#play-button").addEventListener('click', () => {
 		document.querySelector("#play-button").disabled = true;
 		document.querySelector("#pause-button").disabled = false;
-		run(loop)
+		loop.start(fps);
 	});
 
 	document.querySelector("#pause-button").addEventListener('click', () => {
-		stop();
+		loop.stop();
 		document.querySelector("#play-button").disabled = false;
 		document.querySelector("#pause-button").disabled = true;
 	});
 
 	document.querySelector('#init-button').addEventListener('click', () => {
-		stop();
+		loop.stop();
 		document.querySelector("#play-button").disabled = false;
 		document.querySelector("#pause-button").disabled = true;
 
@@ -129,6 +127,7 @@ window.addEventListener('load', () => {
 		width = options.width;
 		height = options.height;
 		grid = options.grid;
+		fps = options.fps;
 
 		initCanvas(canvas, cellSize, width, height);
 		data = initRandom(width, height, threshold);
@@ -145,12 +144,14 @@ window.addEventListener('load', () => {
 		draw(context, cellSize, width, height, data, grid);
 	});
 
-	const loop = (timestamp) => {
-		data = step(width, height, data);
-		draw(context, cellSize, width, height, data, grid);
+	document.querySelector('#fps-play-button').addEventListener('MDCTextField:icon', () => {
+		document.querySelector("#play-button").disabled = true;
+		document.querySelector("#pause-button").disabled = false;
 
-		run(loop);
-	};
+		fps = readValues().fps;
+		loop.stop();
+		loop.start(fps);
+	});
 
-	run(loop);
+	loop.start(fps);
 });

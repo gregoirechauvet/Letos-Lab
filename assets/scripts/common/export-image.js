@@ -1,3 +1,5 @@
+'use strict';
+
 function b64toBlob(dataURI) {
 	// https://stackoverflow.com/questions/27980612/converting-base64-to-blob-in-javascript
 	const byteString = atob(dataURI.split(',')[1]);
