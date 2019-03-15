@@ -27,12 +27,12 @@ function turn(width, height, x, y, orientation, direction) {
 }
 
 function step(context, cellSize, width, height, movements, grid, ants) {
+	const newAnts = [];
 	const updatedCells = {};
 
-	const newAnts = [];
 	ants.forEach(([x, y, orientation]) => {
-		grid[x][y] = (grid[x][y] + 1) % movements.length;
-		const [direction, color] = movements[grid[x][y]];
+		const value = grid[x][y] !== null ? grid[x][y] : 0;
+		grid[x][y] = (value + 1) % movements.length;
 
 		if (!(x in updatedCells)) {
 			updatedCells[x] = new Set();
@@ -40,23 +40,27 @@ function step(context, cellSize, width, height, movements, grid, ants) {
 
 		updatedCells[x].add(y);
 
-		// context.fillStyle = color;
-		// context.fillRect(x * cellSize, y * cellSize, cellSize, cellSize);
-
-		const hop = turn(width, height, x, y, orientation, movements[grid[x][y]][0]);
-		newAnts.push(hop);
+		const [direction,] = movements[grid[x][y]];
+		const newAnt = turn(width, height, x, y, orientation, direction);
+		newAnts.push(newAnt);
 	});
 
 	return {
 		grid: grid,
 		ants: newAnts,
 		updatedCells: updatedCells
-		// updatedCells: updatedCells.map(x => {
-		// 	return updatedCells[x].values().map(y => {
-
-		// 	});
-		// }).flat();
 	};
+}
+
+function updatedDraw(context, cellSize, width, height, movements, grid, ants, updatedCells) {
+	updatedCells.forEach(([x, y]) => {
+		const value = grid[x][y];
+		const [_, color] = movements[value];
+		context.fillStyle = color;
+		context.fillRect(x * cellSize, y * cellSize, cellSize, cellSize);
+	});
+
+	drawAnts(context, cellSize, ants);
 }
 
 function fullDraw(context, cellSize, width, height, movements, grid, ants) {
@@ -66,12 +70,17 @@ function fullDraw(context, cellSize, width, height, movements, grid, ants) {
 
 	for (let i = 0; i < width; i++) {
 		for (let j = 0; j < height; j++) {
-			const [direction, color] = movements[grid[i][j]];
+			const value = grid[i][j];
+			const [direction, color] = value !== null ? movements[value] : [null, 'rgba(0, 0, 0, 0.2)'];
 			context.fillStyle = color;
 			context.fillRect(i * cellSize, j * cellSize, cellSize, cellSize);
 		}
 	}
 
+	drawAnts(context, cellSize, ants);
+}
+
+function drawAnts(context, cellSize, ants) {
 	ants.forEach(([x, y, _]) => {
 		context.fillStyle = 'rgb(255, 0, 0)';
 		context.fillRect(x * cellSize, y * cellSize, cellSize, cellSize);
@@ -82,29 +91,25 @@ function init(width, height) {
 	const grid = [];
 
 	for (let i = 0; i < width; i++) {
-		const row = [];
-		for (let j = 0; j < height; j++) {
-			row.push(0);
-		}
-		grid.push(row);
+		grid.push(Array(height).fill(null));
 	}
 
 	return grid;
 }
 
-function randomInit(width, height, movements) {
-	const grid = [];
+// function randomInit(width, height, movements) {
+// 	const grid = [];
 
-	for (let i = 0; i < width; i++) {
-		const row = [];
-		for (let j = 0; j < height; j++) {
-			row.push(Math.floor(Math.random() * movements.length));
-		}
-		grid.push(row);
-	}
+// 	for (let i = 0; i < width; i++) {
+// 		const row = [];
+// 		for (let j = 0; j < height; j++) {
+// 			row.push(Math.floor(Math.random() * movements.length));
+// 		}
+// 		grid.push(row);
+// 	}
 
-	return grid;
-}
+// 	return grid;
+// }
 
 function initCanvas(canvas, cellSize, width, height) {
 	canvas.width = cellSize * width;
@@ -116,7 +121,8 @@ function readValues() {
 		cellSize: Number(document.querySelector('#size-input').value),
 		width: Number(document.querySelector('#width-input').value),
 		height: Number(document.querySelector('#height-input').value),
-		iterations: Number(document.querySelector('#iterations-input').value)
+		iterations: Number(document.querySelector('#iterations-input').value),
+		fps: Number(document.querySelector('#fps-input').value)
 	};
 }
 
@@ -124,37 +130,100 @@ window.addEventListener('load', () => {
 	const canvas = document.querySelector('#draw').transferControlToOffscreen();
 	const context = canvas.getContext('2d');
 
-	let { cellSize, width, height, iterations } = readValues();
+	let { cellSize, width, height, iterations, fps } = readValues();
 	initCanvas(canvas, cellSize, width, height);
-	let ants = [[50, 50, 'top']];
+	let ants = [[Math.round(width / 2), Math.round(height / 2), 'top']];
 	let grid = init(width, height);
-
-	const movements = [
-		['right', 'rgb(0, 0, 0)'],
-		['left', 'rgb(255, 255, 255)'],
-	];
 	// let grid = randomInit(width, height, movements);
 
-	fullDraw(context, cellSize, width, height, movements, grid, ants);
+	const movements = [
+		['left', 'rgb(0, 0, 0)'],
+		['right', 'rgb(255, 255, 255)'],
+	];
+	// Cool movements
+	// const movements = [
+	// 	['left', 'rgb(0, 0, 0)'],
+	// 	['left', 'rgb(0, 0, 255)'],
+	// 	['left', 'rgba(255, 0, 0)'],
+	// 	['right', 'rgb(0, 255, 0)'],
+	// ];
 
-	document.querySelector('#init-button').addEventListener('click', () => {
+	function mergeUpdates(container, updatedCells) {
+		Object.keys(updatedCells).forEach(x => {
+			const value = updatedCells[x];
+			if (!(x in container)) {
+				container[x] = new Set();
+			}
 
+			updatedCells[x].forEach(y => {
+				container[x].add(y);
+			});
+		});
+	}
+
+	const loop = new Loop(() => {
+			const updatedCells = {};
+			for (let i = 0; i < iterations; i++) {
+				const options = step(context, cellSize, width, height, movements, grid, ants);
+				grid = options.grid;
+				ants = options.ants;
+				mergeUpdates(updatedCells, options.updatedCells);
+			}
+
+			const flatUpdatedCells = Object.keys(updatedCells).map(x => [...updatedCells[x]].map(y => [x, y])).flat();
+			updatedDraw(context, cellSize, width, height, movements, grid, ants, flatUpdatedCells);
 	});
 
-	let play = true;
+	document.querySelector("#play-button").addEventListener('click', () => {
+		document.querySelector("#play-button").disabled = true;
+		document.querySelector("#pause-button").disabled = false;
+		loop.start(fps);
+	});
 
-	const loop = (timestamp) => {
-		for (let i = 0; i < iterations; i++) {
-			const options = step(context, cellSize, width, height, movements, grid, ants);
-			grid = options.grid;
-			ants = options.ants;
-		}
-		// fullDraw(context, cellSize, width, height, movements, grid, ants);
+	document.querySelector("#pause-button").addEventListener('click', () => {
+		loop.stop();
+		document.querySelector("#play-button").disabled = false;
+		document.querySelector("#pause-button").disabled = true;
+	});
 
-		if (play) {
-			requestAnimationFrame(loop);
-		}
-	};
+	document.querySelector('#init-button').addEventListener('click', () => {
+		loop.stop();
+		document.querySelector("#play-button").disabled = true;
+		document.querySelector("#pause-button").disabled = false;
 
-	requestAnimationFrame(loop);
+		const options = readValues();
+		cellSize = options.cellSize;
+		width = options.width;
+		height = options.height;
+		iterations = options.iterations;
+		fps = options.fps;
+
+		initCanvas(canvas, cellSize, width, height);
+		ants = [[Math.round(width / 2), Math.round(height / 2), 'top']];
+		grid = init(width, height);
+
+		fullDraw(context, cellSize, width, height, movements, grid, ants);
+		loop.start(fps);
+	});
+
+	document.querySelector('#fps-play-button').addEventListener('MDCTextField:icon', () => {
+		document.querySelector("#play-button").disabled = true;
+		document.querySelector("#pause-button").disabled = false;
+
+		fps = readValues().fps;
+		loop.stop();
+		loop.start(fps);
+	});
+
+	document.querySelector('#ipf-play-button').addEventListener('MDCTextField:icon', () => {
+		document.querySelector("#play-button").disabled = true;
+		document.querySelector("#pause-button").disabled = false;
+
+		iterations = readValues().iterations;
+		loop.stop();
+		loop.start(fps);
+	});
+
+	fullDraw(context, cellSize, width, height, movements, grid, ants);
+	loop.start(fps);
 });
