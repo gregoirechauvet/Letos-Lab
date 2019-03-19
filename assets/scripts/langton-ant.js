@@ -132,6 +132,7 @@ window.addEventListener('load', () => {
 
 	let { cellSize, width, height, iterations, fps } = readValues();
 	initCanvas(canvas, cellSize, width, height);
+	// let ants = [[Math.round(width / 2) - 1, Math.round(height / 2) - 1, 'top']];
 	let ants = [[Math.round(width / 2), Math.round(height / 2), 'top']];
 	let grid = init(width, height);
 	// let grid = randomInit(width, height, movements);
@@ -146,6 +147,37 @@ window.addEventListener('load', () => {
 	// 	['left', 'rgb(0, 0, 255)'],
 	// 	['left', 'rgba(255, 0, 0)'],
 	// 	['right', 'rgb(0, 255, 0)'],
+	// ];
+
+	// const colors = {
+	// 	'red_magenta': '#FF007F',
+	// 	'red': '#FF0000',
+	// 	'orange': '#FF7F00',
+	// 	'yellow': '#FFFF00',
+	// 	'green_yellow': '#7FFF00',
+	// 	'green': '#00FF00',
+	// 	'green_cyan': '#00FF7F',
+	// 	'cyan': '#00FFFF',
+	// 	'blue_cyan': '007FFFF',
+	// 	'blue': '#0000FF',
+	// 	'blue_magenta': '#7F00FF',
+	// 	'magenta': '#FF00FF',
+	// };
+
+	// Thumbnails colors
+	// const movements = [
+	// 	['right', colors['blue_magenta']],
+	// 	['right', colors['yellow']],
+	// 	['right', colors['blue_cyan']],
+	// 	['left', colors['cyan']], // Ok
+	// 	['right', colors['red_magenta']],  // Outer surface
+	// 	['left', colors['green']],
+	// 	['left', colors['orange']],
+	// 	['right', colors['red']],
+	// 	['right', colors['blue']], // Inner surface
+	// 	['right', colors['green_yellow']],
+	// 	['right', colors['green_cyan']],
+	// 	['right', colors['magenta']]
 	// ];
 
 	function mergeUpdates(container, updatedCells) {
