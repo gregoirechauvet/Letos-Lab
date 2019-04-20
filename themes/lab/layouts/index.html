@@ -14,7 +14,7 @@
 								<h3 class="lab-card__subtitle mdc-typography--subtitle2">{{ .Date.Format "January 2, 2006" }}</h3>
 							</div>
 							<div class="lab-card__secondary mdc-typography--body2">
-								{{ .Params.description }}
+								{{ .Params.description | safeHTML }}
 							</div>
 						</a>
 					</div>
