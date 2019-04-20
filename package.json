@@ -17,19 +17,19 @@
   },
   "homepage": "https://github.com/Prince-Leto/Letos-Lab#readme",
   "dependencies": {
-    "@material/button": "^0.44.1",
-    "@material/card": "^0.44.1",
-    "@material/checkbox": "^0.44.1",
-    "@material/drawer": "^0.44.1",
-    "@material/form-field": "^0.44.1",
+    "@material/button": "^1.1.1",
+    "@material/card": "^1.1.1",
+    "@material/checkbox": "^1.1.0",
+    "@material/drawer": "^1.1.1",
+    "@material/form-field": "^1.1.0",
     "@material/layout-grid": "^0.41.0",
-    "@material/select": "^0.44.0",
-    "@material/textfield": "^0.44.1",
-    "@material/top-app-bar": "^0.44.1",
-    "@material/typography": "^0.44.1"
+    "@material/select": "^1.1.1",
+    "@material/textfield": "^1.1.1",
+    "@material/top-app-bar": "^1.1.1",
+    "@material/typography": "^1.0.0"
   },
   "devDependencies": {
-    "autoprefixer": "^9.4.8",
+    "autoprefixer": "^9.5.1",
     "postcss-cli": "^6.1.2"
   }
 }
