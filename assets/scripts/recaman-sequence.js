@@ -234,9 +234,5 @@ window.addEventListener('load', () => {
 		// }
 	});
 
-	document.querySelector('#download-button').addEventListener('click', () => {
-		openImageInNewTab(canvas);
-	});
-
 	draw(canvas, context);
 });

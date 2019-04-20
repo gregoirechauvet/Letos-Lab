@@ -7,6 +7,7 @@ class Loop {
 	}
 
 	start(fps) {
+		this.previousTimestamp = null;
 		this.delay = 1000 / fps;
 		this.run();
 	}
@@ -22,7 +23,12 @@ class Loop {
 	innerLoop(timestamp) {
 		this.run();
 
-		if (this.previousTimestamp === null) { this.previousTimestamp = timestamp; }
+		if (this.previousTimestamp === null) {
+			this.previousTimestamp = timestamp;
+			this.loop();
+			return ;
+		}
+
 		const delta = timestamp - this.previousTimestamp;
 
 		if (delta > this.delay) {

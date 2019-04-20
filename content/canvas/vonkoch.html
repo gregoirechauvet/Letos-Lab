@@ -1,0 +1,71 @@
++++
+date = "2012-06-01T00:00:00+01:00"
+title = "Von Koch snowflake"
+thumbnail = "vonkoch.png"
+canvasscript = "vonkoch.js"
+draft = false
+dependencies = ["common/loop.js"]
+description = """
+Von Koch snowflake
+"""
++++
+
+<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
+	<button id="draw-button" class="mdc-button mdc-button--raised lab-button--fullwidth">
+		<span class="mdc-button__label">Draw</span>
+	</button>
+</div>
+
+<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
+	<div class="mdc-text-field mdc-text-field--outlined">
+		<input type="text" id="step-input" class="mdc-text-field__input" value="6" pattern="[0-9]+">
+		<div class="mdc-notched-outline">
+			<div class="mdc-notched-outline__leading"></div>
+			<div class="mdc-notched-outline__notch">
+				<label for="step-input" class="mdc-floating-label">Step</label>
+			</div>
+			<div class="mdc-notched-outline__trailing"></div>
+		</div>
+	</div>
+</div>
+
+<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
+	<div class="mdc-text-field mdc-text-field--outlined">
+		<input type="text" id="size-input" class="mdc-text-field__input" value="400" pattern="[0-9]+">
+		<div class="mdc-notched-outline">
+			<div class="mdc-notched-outline__leading"></div>
+			<div class="mdc-notched-outline__notch">
+				<label for="size-input" class="mdc-floating-label">Size (px)</label>
+			</div>
+			<div class="mdc-notched-outline__trailing"></div>
+		</div>
+	</div>
+</div>
+
+<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
+	<div class="mdc-text-field mdc-text-field--outlined mdc-text-field--disabled">
+		<input type="text" id="fps-input" class="mdc-text-field__input" value="1" pattern="[0-9]+" disabled>
+		<div class="mdc-notched-outline">
+			<div class="mdc-notched-outline__leading"></div>
+			<div class="mdc-notched-outline__notch">
+				<label for="fps-input" class="mdc-floating-label">FPS</label>
+			</div>
+			<div class="mdc-notched-outline__trailing"></div>
+		</div>
+	</div>
+</div>
+
+<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
+	<div class="mdc-form-field">
+		<div class="mdc-checkbox">
+			<input type="checkbox" class="mdc-checkbox__native-control" id="animated-input"/>
+			<div class="mdc-checkbox__background">
+				<svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+					<path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+				</svg>
+				<div class="mdc-checkbox__mixedmark"></div>
+			</div>
+		</div>
+		<label for="animated-input">Animated</label>
+	</div>
+</div>

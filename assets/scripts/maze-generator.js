@@ -325,9 +325,5 @@ window.addEventListener('load', () => {
 		element.closest('.mdc-text-field').classList.toggle('mdc-text-field--disabled', this.checked);
 	});
 
-	document.querySelector('#download-button').addEventListener('click', () => {
-		openImageInNewTab(canvas);
-	});
-
 	hop();
 });
