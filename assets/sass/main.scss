@@ -42,13 +42,25 @@ body {
 	margin: 0;
 }
 
-/* CANVAS */
+// CANVAS
 #draw {
   display: block;
   margin: 10px;
 }
 
-/* CUSTOM */
+// CUSTOM
 .lab-button--fullwidth {
   width: 100%;
+}
+
+.lab-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+	justify-content: center;
+	margin: 1rem;
+	gap: 1rem;
+}
+
+.lab-grid__cell > .mdc-card, .lab-grid__cell > .mdc-card > a {
+	height: 100%;
 }

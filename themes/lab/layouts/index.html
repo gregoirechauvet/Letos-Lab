@@ -2,27 +2,25 @@
 	{{ partial "header.html" . }}
 
 	<div class="mdc-drawer-app-content mdc-top-app-bar--fixed-adjust">
-		<div class="mdc-layout-grid">
-			<div class="mdc-layout-grid__inner">
+		<div class="lab-grid">
 
-				{{ range .Pages }}
-					<div class="mdc-layout-grid__cell">
-						<div class="mdc-card">
-							<a class="mdc-card__primary-action mdc-ripple-upgraded" href="{{ .URL }}">
-								<div class="mdc-card__media mdc-card__media--square" style="background-image: url({{ path.Join "thumbnails" .Params.thumbnail | relURL }})"></div>
-								<div class="lab-card__primary">
-									<h2 class="lab-card__title mdc-typography--headline6">{{ .Title }}</h2>
-									<h3 class="lab-card__subtitle mdc-typography--subtitle2">{{ .Date.Format "January 2, 2006" }}</h3>
-								</div>
-								<div class="lab-card__secondary mdc-typography--body2">
-									{{ .Params.description }}
-								</div>
-							</a>
-						</div>
+			{{ range .Pages }}
+				<div class="lab-grid__cell">
+					<div class="mdc-card">
+						<a class="mdc-card__primary-action mdc-ripple-upgraded" href="{{ .URL }}">
+							<div class="mdc-card__media mdc-card__media--square" style="background-image: url({{ path.Join "thumbnails" .Params.thumbnail | relURL }})"></div>
+							<div class="lab-card__primary">
+								<h2 class="lab-card__title mdc-typography--headline6">{{ .Title }}</h2>
+								<h3 class="lab-card__subtitle mdc-typography--subtitle2">{{ .Date.Format "January 2, 2006" }}</h3>
+							</div>
+							<div class="lab-card__secondary mdc-typography--body2">
+								{{ .Params.description }}
+							</div>
+						</a>
 					</div>
-				{{ end }}
+				</div>
+			{{ end }}
 
-			</div>
 		</div>
 	</div>
 {{ end }}
