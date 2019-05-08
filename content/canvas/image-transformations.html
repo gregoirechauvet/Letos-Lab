@@ -9,32 +9,25 @@ Featuring Lena Sjööblom
 """
 +++
 
-<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-1">
+<!-- Featuring <a href="https://wikipedia.org/wiki/Lenna">Lena Sjööblom</a> -->
+<div class="lab-settings-grid">
 	<button id="play-button" class="mdc-button mdc-button--raised lab-button--fullwidth" disabled>
 		<span class="mdc-button__label"><i class="material-icons">play_arrow</i></span>
 	</button>
-</div>
 
-<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-1">
 	<button id="pause-button" class="mdc-button mdc-button--raised lab-button--fullwidth">
 		<span class="mdc-button__label"><i class="material-icons">pause</i></span>
 	</button>
-</div>
 
-<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-1">
 	<button id="previous-button" class="mdc-button mdc-button--raised lab-button--fullwidth">
 		<span class="mdc-button__label"><i class="material-icons">fast_rewind</i></span>
 	</button>
-</div>
 
-<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-1">
 	<button id="next-button" class="mdc-button mdc-button--raised lab-button--fullwidth">
 		<span class="mdc-button__label"><i class="material-icons">fast_forward</i></span>
 	</button>
-</div>
 
-<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
-	<div class="mdc-select mdc-select--outlined lab-button--fullwidth">
+	<div class="lab-settings-grid__span-2 mdc-select mdc-select--outlined lab-button--fullwidth">
 		<i class="mdc-select__dropdown-icon"></i>
 		<select id="transformation-input" class="mdc-select__native-control">
 			<option value="photomaton">
@@ -55,10 +48,8 @@ Featuring Lena Sjööblom
 			<div class="mdc-notched-outline__trailing"></div>
 		</div>
 	</div>
-</div>
 
-<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
-	<div class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-trailing-icon">
+	<div class="lab-settings-grid__span-2 mdc-text-field mdc-text-field--outlined mdc-text-field--with-trailing-icon">
 		<input type="text" id="fps-input" class="mdc-text-field__input" value="5">
 		<i id="fps-play-button" class="material-icons mdc-text-field__icon" tabindex="0" role="button">play_arrow</i>
 		<div class="mdc-notched-outline">

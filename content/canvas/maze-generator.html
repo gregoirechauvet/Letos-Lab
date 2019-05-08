@@ -8,8 +8,8 @@ A simple maze generator
 """
 +++
 
-<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
-	<div class="mdc-form-field">
+<div class="lab-settings-grid">
+	<div class="lab-settings-grid__span-2 mdc-form-field">
 		<div class="mdc-checkbox">
 			<input type="checkbox" class="mdc-checkbox__native-control" id="animated-input"/>
 			<div class="mdc-checkbox__background">
@@ -21,22 +21,16 @@ A simple maze generator
 		</div>
 		<label for="animated-input">Animated</label>
 	</div>
-</div>
 
-<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
-	<button id="generate-button" class="mdc-button mdc-button--raised lab-button--fullwidth">
+	<button id="generate-button" class="lab-settings-grid__span-2 mdc-button mdc-button--raised lab-button--fullwidth">
 		<span class="mdc-button__label">Generate</span>
 	</button>
-</div>
 
-<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
-	<button id="solve-button" class="mdc-button mdc-button--raised lab-button--fullwidth" disabled>
+	<button id="solve-button" class="lab-settings-grid__span-2 mdc-button mdc-button--raised lab-button--fullwidth" disabled>
 		<span class="mdc-button__label">Solve</span>
 	</button>
-</div>
 
-<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
-	<div class="mdc-text-field mdc-text-field--outlined">
+	<div class="lab-settings-grid__span-2 mdc-text-field mdc-text-field--outlined">
 		<input type="text" id="size-input" class="mdc-text-field__input" value="10" pattern="[0-9]+">
 		<div class="mdc-notched-outline">
 			<div class="mdc-notched-outline__leading"></div>
@@ -46,9 +40,7 @@ A simple maze generator
 			<div class="mdc-notched-outline__trailing"></div>
 		</div>
 	</div>
-</div>
 
-<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-1">
 	<div class="mdc-text-field mdc-text-field--outlined">
 		<input type="text" id="width-input" class="mdc-text-field__input" value="50" pattern="[0-9]+">
 		<div class="mdc-notched-outline">
@@ -59,9 +51,7 @@ A simple maze generator
 			<div class="mdc-notched-outline__trailing"></div>
 		</div>
 	</div>
-</div>
 
-<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-1">
 	<div class="mdc-text-field mdc-text-field--outlined">
 		<input type="text" id="height-input" class="mdc-text-field__input" value="40" pattern="[0-9]+">
 		<div class="mdc-notched-outline">
@@ -72,10 +62,8 @@ A simple maze generator
 			<div class="mdc-notched-outline__trailing"></div>
 		</div>
 	</div>
-</div>
 
-<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
-	<div class="mdc-form-field">
+	<div class="lab-settings-grid__span-2 mdc-form-field">
 		<div class="mdc-checkbox">
 			<input type="checkbox" class="mdc-checkbox__native-control" id="auto-seed-input" checked/>
 			<div class="mdc-checkbox__background">
@@ -87,10 +75,8 @@ A simple maze generator
 		</div>
 		<label for="auto-seed-input">Auto seed?</label>
 	</div>
-</div>
 
-<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
-	<div class="mdc-text-field mdc-text-field--outlined mdc-text-field--disabled">
+	<div class="lab-settings-grid__span-2 mdc-text-field mdc-text-field--outlined mdc-text-field--disabled">
 		<input type="text" id="seed-input" class="mdc-text-field__input" value="hello" disabled>
 		<div class="mdc-notched-outline">
 			<div class="mdc-notched-outline__leading"></div>

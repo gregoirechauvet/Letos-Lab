@@ -10,14 +10,12 @@ Von Koch snowflake
 """
 +++
 
-<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
-	<button id="draw-button" class="mdc-button mdc-button--raised lab-button--fullwidth">
+<div class="lab-settings-grid">
+	<button id="draw-button" class="lab-settings-grid__span-2 mdc-button mdc-button--raised lab-button--fullwidth">
 		<span class="mdc-button__label">Draw</span>
 	</button>
-</div>
 
-<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
-	<div class="mdc-text-field mdc-text-field--outlined">
+	<div class="lab-settings-grid__span-2 mdc-text-field mdc-text-field--outlined">
 		<input type="text" id="step-input" class="mdc-text-field__input" value="6" pattern="[0-9]+">
 		<div class="mdc-notched-outline">
 			<div class="mdc-notched-outline__leading"></div>
@@ -27,10 +25,8 @@ Von Koch snowflake
 			<div class="mdc-notched-outline__trailing"></div>
 		</div>
 	</div>
-</div>
 
-<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
-	<div class="mdc-text-field mdc-text-field--outlined">
+	<div class="lab-settings-grid__span-2 mdc-text-field mdc-text-field--outlined">
 		<input type="text" id="size-input" class="mdc-text-field__input" value="400" pattern="[0-9]+">
 		<div class="mdc-notched-outline">
 			<div class="mdc-notched-outline__leading"></div>
@@ -40,10 +36,8 @@ Von Koch snowflake
 			<div class="mdc-notched-outline__trailing"></div>
 		</div>
 	</div>
-</div>
 
-<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
-	<div class="mdc-text-field mdc-text-field--outlined mdc-text-field--disabled">
+	<div class="lab-settings-grid__span-2 mdc-text-field mdc-text-field--outlined mdc-text-field--disabled">
 		<input type="text" id="fps-input" class="mdc-text-field__input" value="1" pattern="[0-9]+" disabled>
 		<div class="mdc-notched-outline">
 			<div class="mdc-notched-outline__leading"></div>
@@ -53,10 +47,8 @@ Von Koch snowflake
 			<div class="mdc-notched-outline__trailing"></div>
 		</div>
 	</div>
-</div>
 
-<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
-	<div class="mdc-form-field">
+	<div class="lab-settings-grid__span-2 mdc-form-field">
 		<div class="mdc-checkbox">
 			<input type="checkbox" class="mdc-checkbox__native-control" id="animated-input"/>
 			<div class="mdc-checkbox__background">

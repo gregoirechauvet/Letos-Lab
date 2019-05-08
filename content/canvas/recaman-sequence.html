@@ -8,9 +8,9 @@ Drawing the Recaman sequence
 """
 +++
 
-<!-- Temporarily hidden -->
-<div style="display: none;" class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
-	<div class="mdc-form-field">
+<div class="lab-settings-grid">
+	<!-- Temporarily hidden -->
+	<div class="lab-settings-grid__span-2 mdc-form-field" style="display: none;">
 		<div class="mdc-checkbox">
 			<input type="checkbox" class="mdc-checkbox__native-control" id="animated-input" disabled/>
 			<div class="mdc-checkbox__background">
@@ -22,16 +22,12 @@ Drawing the Recaman sequence
 		</div>
 		<label for="animated-input">Animated</label>
 	</div>
-</div>
 
-<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
-	<button id="draw-button" class="mdc-button mdc-button--raised lab-button--fullwidth">
+	<button id="draw-button" class="lab-settings-grid__span-2 mdc-button mdc-button--raised lab-button--fullwidth">
 		<span class="mdc-button__label">Draw</span>
 	</button>
-</div>
 
-<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
-	<div class="mdc-text-field mdc-text-field--outlined">
+	<div class="lab-settings-grid__span-2 mdc-text-field mdc-text-field--outlined">
 		<!-- Use pattern validation, because mdc does not support number fields -->
 		<input type="text" id="scale-input" class="mdc-text-field__input" value="7" pattern="[0-9]+|[0.9]+\.[0-9]+">
 		<div class="mdc-notched-outline">
@@ -42,10 +38,8 @@ Drawing the Recaman sequence
 			<div class="mdc-notched-outline__trailing"></div>
 		</div>
 	</div>
-</div>
 
-<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
-	<div class="mdc-text-field mdc-text-field--outlined">
+	<div class="lab-settings-grid__span-2 mdc-text-field mdc-text-field--outlined">
 		<!-- Use pattern validation, because mdc does not support number fields -->
 		<input type="text" id="max-iteration-input" class="mdc-text-field__input" value="65" pattern="[0-9]+">
 		<div class="mdc-notched-outline">
@@ -56,10 +50,8 @@ Drawing the Recaman sequence
 			<div class="mdc-notched-outline__trailing"></div>
 		</div>
 	</div>
-</div>
 
-<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
-	<div class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-trailing-icon">
+	<div class="lab-settings-grid__span-2 mdc-text-field mdc-text-field--outlined mdc-text-field--with-trailing-icon">
 		<!-- Use pattern validation, because mdc does not support number fields -->
 		<input type="text" id="hue-speed-input" class="mdc-text-field__input" value="3" pattern="[0-9]{1,2}|[12][0-9]{2}|3[0-5][0-9]|[0.9]+\.[0-9]+">
 		<div class="mdc-notched-outline">
@@ -70,10 +62,8 @@ Drawing the Recaman sequence
 			<div class="mdc-notched-outline__trailing"></div>
 		</div>
 	</div>
-</div>
 
-<div style="display: none;" class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
-	<div class="mdc-text-field mdc-text-field--outlined mdc-text-field--disabled">
+	<div class="lab-settings-grid__span-2 mdc-text-field mdc-text-field--outlined mdc-text-field--disabled" style="display: none;">
 		<!-- Use pattern validation, because mdc does not support number fields -->
 		<input type="text" id="draw-speed-input" class="mdc-text-field__input" value="2" pattern="[0-9]+|[0.9]+\.[0-9]+" disabled>
 		<div class="mdc-notched-outline">

@@ -10,26 +10,20 @@ The Langton Ant cellular automata
 """
 +++
 
-<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-1">
+<div class="lab-settings-grid">
 	<button id="play-button" class="mdc-button mdc-button--raised lab-button--fullwidth" disabled>
 		<span class="mdc-button__label"><i class="material-icons">play_arrow</i></span>
 	</button>
-</div>
 
-<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-1">
 	<button id="pause-button" class="mdc-button mdc-button--raised lab-button--fullwidth">
 		<span class="mdc-button__label"><i class="material-icons">pause</i></span>
 	</button>
-</div>
 
-<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
-	<button id="init-button" class="mdc-button mdc-button--raised lab-button--fullwidth">
+	<button id="init-button" class="lab-settings-grid__span-2 mdc-button mdc-button--raised lab-button--fullwidth">
 		<span class="mdc-button__label">Initialize</span>
 	</button>
-</div>
 
-<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
-	<div class="mdc-text-field mdc-text-field--outlined">
+	<div class="lab-settings-grid__span-2 mdc-text-field mdc-text-field--outlined">
 		<input type="text" id="size-input" class="mdc-text-field__input" value="5">
 		<div class="mdc-notched-outline">
 			<div class="mdc-notched-outline__leading"></div>
@@ -39,9 +33,7 @@ The Langton Ant cellular automata
 			<div class="mdc-notched-outline__trailing"></div>
 		</div>
 	</div>
-</div>
 
-<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-1">
 	<div class="mdc-text-field mdc-text-field--outlined">
 		<input type="text" id="height-input" class="mdc-text-field__input" value="120">
 		<div class="mdc-notched-outline">
@@ -52,9 +44,7 @@ The Langton Ant cellular automata
 			<div class="mdc-notched-outline__trailing"></div>
 		</div>
 	</div>
-</div>
 
-<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-1">
 	<div class="mdc-text-field mdc-text-field--outlined">
 		<input type="text" id="width-input" class="mdc-text-field__input" value="120">
 		<div class="mdc-notched-outline">
@@ -65,10 +55,8 @@ The Langton Ant cellular automata
 			<div class="mdc-notched-outline__trailing"></div>
 		</div>
 	</div>
-</div>
 
-<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
-	<div class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-trailing-icon">
+	<div class="lab-settings-grid__span-2 mdc-text-field mdc-text-field--outlined mdc-text-field--with-trailing-icon">
 		<input type="text" id="fps-input" class="mdc-text-field__input" value="60">
 		<i id="fps-play-button" class="material-icons mdc-text-field__icon" tabindex="0" role="button">play_arrow</i>
 		<div class="mdc-notched-outline">
@@ -79,10 +67,8 @@ The Langton Ant cellular automata
 			<div class="mdc-notched-outline__trailing"></div>
 		</div>
 	</div>
-</div>
 
-<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
-	<div class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-trailing-icon">
+	<div class="lab-settings-grid__span-2 mdc-text-field mdc-text-field--outlined mdc-text-field--with-trailing-icon">
 		<input type="text" id="iterations-input" class="mdc-text-field__input" value="20">
 		<i id="ipf-play-button" class="material-icons mdc-text-field__icon" tabindex="0" role="button">play_arrow</i>
 		<div class="mdc-notched-outline">

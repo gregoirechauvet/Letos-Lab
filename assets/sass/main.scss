@@ -48,7 +48,7 @@ body {
   margin: 10px;
 }
 
-// CUSTOM
+// MISC
 .lab-button--fullwidth {
   width: 100%;
 }
@@ -63,4 +63,17 @@ body {
 
 .lab-grid__cell > .mdc-card, .lab-grid__cell > .mdc-card > a {
 	height: 100%;
+}
+
+
+// SETTINGS GRID
+.lab-settings-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	padding: 24px;
+	grid-gap: 24px;
+
+	&__span-2 {
+		grid-column: span 2;
+	}
 }
