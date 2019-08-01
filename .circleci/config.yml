@@ -1,0 +1,20 @@
+version: 2
+
+jobs:
+  build:
+    docker:
+      - image: golang
+        user: root
+    steps:
+      - run: apt-get update && apt-get install -y hugo npm
+      - checkout
+      - run: npm i
+      - run: hugo
+
+
+workflows:
+  version: 2
+
+  validate:
+    jobs:
+      - build
